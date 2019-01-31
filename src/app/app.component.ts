@@ -4,7 +4,7 @@ import { Navigation } from 'projects/nshmp-ng-template/src/public_api';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'nshmp-template';
