@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "nshmp-ng-template": {
+      "root": "projects/nshmp-ng-template",
+      "sourceRoot": "projects/nshmp-ng-template/src",
+      "projectType": "library",
+      "prefix": "nshmp-template",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nshmp-ng-template/tsconfig.lib.json",
+            "project": "projects/nshmp-ng-template/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nshmp-ng-template/src/test.ts",
+            "tsConfig": "projects/nshmp-ng-template/tsconfig.spec.json",
+            "karmaConfig": "projects/nshmp-ng-template/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nshmp-ng-template/tsconfig.lib.json",
+              "projects/nshmp-ng-template/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nshmp-template"
