@@ -5,7 +5,7 @@ import { Navigation } from './navigation.model';
 @Component({
   selector: 'nshmp-template-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 

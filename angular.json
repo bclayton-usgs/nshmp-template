@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "projects/nshmp-ng-template/src/lib/styles.css"
+              "projects/nshmp-ng-template/src/lib/styles.scss"
             ],
             "scripts": []
           },
@@ -79,7 +79,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -166,5 +166,10 @@
       }
     }
   },
-  "defaultProject": "nshmp-template"
+  "defaultProject": "nshmp-template",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
