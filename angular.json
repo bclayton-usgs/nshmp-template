@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "projects/nshmp-ng-template/src/lib/styles.css"
             ],
             "scripts": []
           },
