@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "nshmp-ng-template": [
+        "dist/nshmp-ng-template"
+      ],
+      "nshmp-ng-template/*": [
+        "dist/nshmp-ng-template/*"
+      ]
+    }
   }
 }
