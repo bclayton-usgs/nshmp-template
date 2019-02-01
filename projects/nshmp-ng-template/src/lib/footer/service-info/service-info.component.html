@@ -1,0 +1,13 @@
+<div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let service of serviceInfo.service">
+      <h2 mat-line>{{ service.name }}:</h2>
+      <p mat-line class="indent">Version: {{ service.version }}</p>
+      <p mat-line class="indent">URL: {{ service.url }}</p>
+    </mat-list-item>
+    
+    <mat-list-item>Threads: {{ serviceInfo.threads }}</mat-list-item>
+  </mat-list>
+
+</div>
