@@ -20,10 +20,18 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "../node_modules/nshmp-ng-template/assets",
+                "output": "./assets/nshmp-ng-template/"
+              }, {
+                "glob": "**/*",
+                "input": "projects/nshmp-ng-template/src/assets",
+                "output": "./assets/"
+              }
             ],
             "styles": [
-              "projects/nshmp-ng-template/src/lib/styles.scss"
+              "projects/nshmp-ng-template/src/lib/scss/styles.scss"
             ],
             "scripts": []
           },
