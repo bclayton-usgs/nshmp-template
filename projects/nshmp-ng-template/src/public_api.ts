@@ -5,4 +5,6 @@
 export * from './lib/nshmp-template.service';
 export * from './lib/nshmp-template.component';
 export * from './lib/nshmp-template.module';
-export * from './lib/header/navigation.model';
+export * from './lib/navigation/navigation.model';
+export * from './lib/footer/service-info/service-info.model';
+export * from './lib/footer/footer.service';

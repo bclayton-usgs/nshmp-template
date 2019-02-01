@@ -1,0 +1,59 @@
+
+<footer class="mat-elevation-z12">
+  <mat-toolbar>
+
+    <!-- Compute button -->
+    <div>
+      <button
+          mat-raised-button color="primary"
+          (click)="onCompute()">
+        Compute
+      </button>
+    </div>
+
+    <div class="flex-spacer"></div>
+
+    <div>
+      <!-- Service info button -->
+      <button
+          class="pad-button"
+          mat-icon-button
+          (click)="onServiceInfo()"
+          [disabled]="!serviceInfo"
+          aria-label="Info"
+          type="button">
+        <mat-icon
+            matTooltip="Service Info"
+            matTooltipPosition="above"
+            class="mat-icon-lg">
+          info
+        </mat-icon>
+      </button>
+
+      <!-- Github button -->
+      <a
+          class="pad-button"
+          mat-icon-button
+          aria-label="Github"
+          href="https://github.com/usgs/nshmp-haz-ws/issues/new"
+          target="_blank">
+        <mat-icon
+            matTooltip="Submit a Github issue"
+            matTooltipPosition="above"
+            class="mat-icon-lg"
+            svgIcon="github">
+        </mat-icon>
+      </a>
+
+
+      <!-- Raw data button -->
+      <button
+          mat-raised-button color="warn"
+          (click)="onRawData()"
+          type="button">
+        Raw Data
+      </button>
+    </div>
+
+  </mat-toolbar>
+</footer>
