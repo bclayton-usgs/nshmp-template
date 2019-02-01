@@ -4,21 +4,40 @@ import { RouterModule } from '@angular/router';
 import {
   MatToolbarModule,
   MatMenuModule,
-  MatIconModule
+  MatIconModule,
+  MatButtonModule,
+  MatTooltipModule,
+  MatBottomSheetModule,
+  MatListModule,
 } from '@angular/material';
+import 'hammerjs';
 
 import { NshmpTemplateComponent } from './nshmp-template.component';
-import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ServiceInfoComponent } from './footer/service-info/service-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [NshmpTemplateComponent, HeaderComponent],
+  declarations: [
+    NshmpTemplateComponent,
+    NavigationComponent,
+    FooterComponent,
+    ServiceInfoComponent
+  ],
   imports: [
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatBottomSheetModule,
+    MatListModule,
+    HttpClientModule,
     RouterModule.forRoot([])
   ],
-  exports: [NshmpTemplateComponent]
+  exports: [NshmpTemplateComponent],
+  entryComponents: [ ServiceInfoComponent ]
 })
 export class NshmpTemplateModule { }
