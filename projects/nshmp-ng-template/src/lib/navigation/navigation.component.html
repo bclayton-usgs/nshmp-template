@@ -1,11 +1,18 @@
-
-<header>
+<nav>
   <mat-toolbar role="heading" class="mat-elevation-z6" color="primary">
-    <span routerLink="/" class="pointer">USGS</span>
 
-    <span style="flex: 1 1 auto"></span>
+    <!-- USGS logo -->
+    <div routerLink="/" class="pointer usgs-logo">
+      <img
+        src="assets/usgs-logo.svg"
+        alt="U.S. Geological Survey"
+        title="U.S. Geological Survey Logo">
+    </div>
 
-    <span *ngIf="navigationList">
+    <div class="flex-spacer"></div>
+
+    <!-- Site navigation menu -->
+    <div *ngIf="navigationList">
       <mat-icon
           mat-button
           [matMenuTriggerFor]="menu"
@@ -21,7 +28,7 @@
           {{ navItem.display }}
         </button>
       </mat-menu>
-    </span>
+    </div>
 
   </mat-toolbar>
-</header>
+</nav>
