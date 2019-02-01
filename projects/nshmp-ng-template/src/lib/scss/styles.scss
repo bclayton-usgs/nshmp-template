@@ -1,0 +1,39 @@
+/* Import theme */
+@import './theme.scss';
+
+/* Import mixins */
+@import './mixins.scss';
+
+body {
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.flex-spacer {
+  flex-grow: 1; 
+}
+
+.mat-icon-button .mat-icon.mat-icon-sm,
+.mat-icon.mat-icon-sm {
+  @include mat-icon-size(18px);
+}
+
+.mat-icon-button .mat-icon.mat-icon-md,
+.mat-icon.mat-icon-md {
+  @include mat-icon-size(24px);
+}
+
+.mat-icon-button .mat-icon-lg,
+.mat-icon.mat-icon-lg {
+  @include mat-icon-size(36px);
+}
+
+/* 
+  Include theme styles for core and each component used in your app.
+  Alternatively, you can import and @include the theme mixins for each component
+  that you are using.
+*/
+@include angular-material-theme($nshmp-theme);
