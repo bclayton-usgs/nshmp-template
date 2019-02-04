@@ -1,0 +1,21 @@
+
+<!-- Progress spinner -->
+<mat-dialog-content class="center">
+  <mat-spinner diameter="80"></mat-spinner>
+  <p class="mat-title">{{ data.text }}</p>
+</mat-dialog-content>
+
+<mat-divider></mat-divider>
+
+<!-- Cancel button -->
+<mat-dialog-actions>
+  <button
+      mat-raised-button
+      (click)="onCancel()"
+      class="center"
+      color="primary"
+      type="button">
+    Cancel
+  </button>
+</mat-dialog-actions>
+
