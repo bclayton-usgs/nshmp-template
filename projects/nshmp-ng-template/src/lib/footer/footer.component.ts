@@ -4,13 +4,13 @@ import {
   Input } from '@angular/core';
 import {
   MatBottomSheet,
-  MatBottomSheetRef,
-  MatIconRegistry} from '@angular/material';
+  MatIconRegistry,
+  MatButton} from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
+import { FooterService } from './footer.service';
 import { ServiceInfoComponent } from './service-info/service-info.component';
 import { ServiceInfo } from './service-info/service-info.model';
-import { FooterService } from './footer.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'nshmp-template-footer',
@@ -19,9 +19,44 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class FooterComponent implements OnInit {
 
+  /** ServiceInfo object to render onServiceInfo */
   @Input() serviceInfo: ServiceInfo;
 
-  bottomSheetRef: MatBottomSheetRef<ServiceInfoComponent>;
+  /**
+   * Whether to disable the compute button.
+   * Default: false
+   */
+  @Input() computeBtnDisabled: boolean;
+
+  /**
+   * Whether to disable the service info icon.
+   * Default: false
+   */
+  @Input() serviceInfoBtnDisabled: boolean;
+
+  /**
+   * Whether to disable the raw data button.
+   * Default: false
+   */
+  @Input() rawDataBtnDisabled: boolean;
+
+  /**
+   * Whether to render the compute button.
+   * Default: true
+   */
+  @Input() renderComputeBtn: boolean;
+
+  /**
+   * Whether to render the raw data button.
+   * Default: true
+   */
+  @Input() renderRawDataBtn: boolean;
+
+  /**
+   * Whether to render the service info button.
+   * Default: true
+   */
+  @Input() renderServiceInfoBtn: boolean;
 
   constructor(
       private bottomSheet: MatBottomSheet,
@@ -35,16 +70,16 @@ export class FooterComponent implements OnInit {
         this.sanitizer.bypassSecurityTrustResourceUrl('assets/github.svg'));
   }
 
-  onCompute() {
-    this.footerService.computeButton.next();
+  onCompute(btnEl: MatButton) {
+    this.footerService.computeButton.next(btnEl);
   }
 
-  onRawData() {
-    this.footerService.rawDataButton.next();
+  onRawData(btnEl: MatButton) {
+    this.footerService.rawDataButton.next(btnEl);
   }
 
   onServiceInfo() {
-    this.bottomSheetRef = this.bottomSheet.open(
+    this.bottomSheet.open(
         ServiceInfoComponent,
         { data: this.serviceInfo });
   }

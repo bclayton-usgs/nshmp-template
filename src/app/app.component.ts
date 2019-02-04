@@ -4,6 +4,7 @@ import {
   ServiceInfo,
   FooterService } from 'projects/nshmp-ng-template/src/public_api';
 import { Subscription } from 'rxjs';
+import { MatButton } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,10 @@ export class AppComponent implements OnInit, OnDestroy {
   navigationList: Navigation[] = [
     {
       display: 'Example 1',
-      href: '/'
+      routerLink: '/'
     }, {
       display: 'Example 2',
-      href: '/'
+      routerLink: '/'
     }
   ];
 
@@ -46,13 +47,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.computeSubscription = this.footerService.computeButton
-      .subscribe(() => {
-        console.log('Compute button pressed!');
+      .subscribe((btnEl: MatButton) => {
+        console.log('Compute button pressed!', btnEl);
       });
 
     this.rawDataSubscription = this.footerService.rawDataButton
-      .subscribe(() => {
-        console.log('Raw data button pressed!');
+      .subscribe((btnEl: MatButton) => {
+        console.log('Raw data button pressed!', btnEl);
       });
   }
 

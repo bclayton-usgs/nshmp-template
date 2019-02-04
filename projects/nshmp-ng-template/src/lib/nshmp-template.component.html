@@ -4,4 +4,12 @@
 
 <ng-content></ng-content>
 
-<nshmp-template-footer [serviceInfo]="serviceInfo"></nshmp-template-footer>
+<nshmp-template-footer
+    [serviceInfo]="serviceInfo"
+    [computeBtnDisabled]="computeBtnDisabled"
+    [rawDataBtnDisabled]="rawDataBtnDisabled"
+    [serviceInfoBtnDisabled]="serviceInfoBtnDisabled"
+    [renderComputeBtn]="renderComputeBtn"
+    [renderRawDataBtn]="renderRawDataBtn"
+    [renderServiceInfoBtn]="renderServiceInfoBtn">
+</nshmp-template-footer>

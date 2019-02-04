@@ -2,11 +2,19 @@
 <footer class="mat-elevation-z12">
   <mat-toolbar>
 
-    <!-- Compute button -->
     <div>
+      <!-- Compute button -->
       <button
-          mat-raised-button color="primary"
-          (click)="onCompute()">
+          mat-raised-button
+          #computeBtn
+          *ngIf="renderComputeBtn"
+          (click)="onCompute(computeBtn)"
+          [disabled]="computeBtnDisabled"
+          aria-label="Compute button"
+          color="primary"
+          id="compute-btn"
+          name="compute-btn"
+          type="button">
         Compute
       </button>
     </div>
@@ -16,40 +24,48 @@
     <div>
       <!-- Service info button -->
       <button
-          class="pad-button"
           mat-icon-button
+          *ngIf="renderServiceInfoBtn"
           (click)="onServiceInfo()"
-          [disabled]="!serviceInfo"
-          aria-label="Info"
+          [disabled]="!serviceInfo || serviceInfoBtnDisabled"
+          class="pad-button"
+          id="service-info-btn"
+          name="service-info-btn"
           type="button">
         <mat-icon
+            aria-label="Info button"
+            class="mat-icon-lg"
             matTooltip="Service Info"
-            matTooltipPosition="above"
-            class="mat-icon-lg">
+            matTooltipPosition="above">
           info
         </mat-icon>
       </button>
 
       <!-- Github button -->
       <a
-          class="pad-button"
           mat-icon-button
-          aria-label="Github"
+          [ngClass]="{'pad-button': renderRawDataBtn}"
           href="https://github.com/usgs/nshmp-haz-ws/issues/new"
           target="_blank">
         <mat-icon
+            aria-label="Submit a issue with Github"
+            class="mat-icon-lg"
             matTooltip="Submit a Github issue"
             matTooltipPosition="above"
-            class="mat-icon-lg"
             svgIcon="github">
         </mat-icon>
       </a>
 
-
       <!-- Raw data button -->
       <button
-          mat-raised-button color="warn"
-          (click)="onRawData()"
+          mat-raised-button
+          #rawDataBtn
+          *ngIf="renderRawDataBtn"
+          (click)="onRawData(rawDataBtn)"
+          [disabled]="rawDataBtnDisabled"
+          color="warn"
+          id="raw-data-btn"
+          name="raw-data-btn"
           type="button">
         Raw Data
       </button>
