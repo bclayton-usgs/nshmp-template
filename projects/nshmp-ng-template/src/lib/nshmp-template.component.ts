@@ -10,8 +10,29 @@ import { ServiceInfo } from './footer/service-info/service-info.model';
 })
 export class NshmpTemplateComponent implements OnInit {
 
+  /** Navigation list for the header dropdown menu */
   @Input() navigationList: Navigation[];
+
+  /** ServiceInfo object to render when service button is clicked */
   @Input() serviceInfo: ServiceInfo;
+
+  /** Whether to disable the compute button on the footer */
+  @Input() computeBtnDisabled = false;
+
+  /** Whether to disable the service info icon on the footer */
+  @Input() rawDataBtnDisabled = false;
+
+  /** Whether to disable the raw data button on the footer */
+  @Input() serviceInfoBtnDisabled = false;
+
+  /** Whether to render the compute button on the footer */
+  @Input() renderComputeBtn = true;
+
+  /** Whether to render the raw data button on the footer */
+  @Input() renderRawDataBtn = true;
+
+  /** Whether to render the service info button on the footer */
+  @Input() renderServiceInfoBtn = true;
 
   constructor() { }
 
