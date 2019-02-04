@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
 import {
   Navigation,
   ServiceInfo,
-  FooterService } from 'projects/nshmp-ng-template/src/public_api';
-import { Subscription } from 'rxjs';
+  FooterService,
+  SpinnerService} from 'projects/nshmp-ng-template/src/public_api';
+import { Subscription, Observable, interval } from 'rxjs';
 import { MatButton } from '@angular/material';
 
 @Component({
@@ -43,9 +44,17 @@ export class AppComponent implements OnInit, OnDestroy {
   computeSubscription: Subscription;
   rawDataSubscription: Subscription;
 
-  constructor(private footerService: FooterService) {}
+  spinnerOn = false;
+
+  constructor(
+      private footerService: FooterService,
+      private spinnerService: SpinnerService) {
+    console.log('AppComponent constructor');
+  }
 
   ngOnInit() {
+    this.spinner();
+
     this.computeSubscription = this.footerService.computeButton
       .subscribe((btnEl: MatButton) => {
         console.log('Compute button pressed!', btnEl);
@@ -55,11 +64,20 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((btnEl: MatButton) => {
         console.log('Raw data button pressed!', btnEl);
       });
+
   }
 
   ngOnDestroy() {
     this.computeSubscription.unsubscribe();
     this.rawDataSubscription.unsubscribe();
+  }
+
+  spinner() {
+    const subscription = interval(10000).subscribe(() => {
+      this.spinnerService.removeSpinner();
+    });
+
+    this.spinnerService.showSpinnerLoading(subscription);
   }
 
 }

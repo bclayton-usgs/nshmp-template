@@ -9,6 +9,9 @@ import {
   MatTooltipModule,
   MatBottomSheetModule,
   MatListModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS
 } from '@angular/material';
 import 'hammerjs';
 
@@ -17,13 +20,17 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceInfoComponent } from './footer/service-info/service-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.component';
 
 @NgModule({
   declarations: [
     NshmpTemplateComponent,
     NavigationComponent,
     FooterComponent,
-    ServiceInfoComponent
+    ServiceInfoComponent,
+    SpinnerComponent,
+    SpinnerDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -35,9 +42,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatBottomSheetModule,
     MatListModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
     RouterModule.forRoot([])
   ],
   exports: [NshmpTemplateComponent],
-  entryComponents: [ ServiceInfoComponent ]
+  entryComponents: [ ServiceInfoComponent, SpinnerDialogComponent ],
+  providers: [
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {
+        disableClose: true,
+        hasBackdrop: true
+      }
+    }
+  ]
 })
 export class NshmpTemplateModule { }
