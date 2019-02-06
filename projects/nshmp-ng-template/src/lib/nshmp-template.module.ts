@@ -11,9 +11,12 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatDialogModule,
-  MAT_DIALOG_DEFAULT_OPTIONS
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatSidenavModule,
+  MatExpansionModule
 } from '@angular/material';
 import 'hammerjs';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NshmpTemplateComponent } from './nshmp-template.component';
 import { FooterComponent } from './footer/footer.component';
@@ -22,6 +25,8 @@ import { ServiceInfoComponent } from './footer/service-info/service-info.compone
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.component';
+import { ControlPanelComponent } from './control-panel/control-panel.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,9 @@ import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.
     FooterComponent,
     ServiceInfoComponent,
     SpinnerComponent,
-    SpinnerDialogComponent
+    SpinnerDialogComponent,
+    ControlPanelComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -44,6 +51,9 @@ import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.
     HttpClientModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatExpansionModule,
     RouterModule.forRoot([])
   ],
   exports: [NshmpTemplateComponent],

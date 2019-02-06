@@ -2,7 +2,19 @@
 <nshmp-template-navigation [navigationList]="navigationList">
 </nshmp-template-navigation>
 
-<ng-content></ng-content>
+<nshmp-template-main-page>
+  <nshmp-template-control-panel>
+    <ng-content
+        select="nshmp-control-panel"
+        ngProjectAs="nshmp-control-panel">
+    </ng-content>
+
+    <ng-content
+        select="nshmp-main-content"
+        ngProjectAs="nshmp-main-content">
+    </ng-content>
+  </nshmp-template-control-panel>
+</nshmp-template-main-page>
 
 <nshmp-template-spinner></nshmp-template-spinner>
 

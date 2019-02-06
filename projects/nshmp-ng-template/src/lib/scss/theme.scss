@@ -17,7 +17,7 @@
   hue. Available color palettes: https://material.io/design/color/
 */
 $nshmp-primary: mat-palette($mat-indigo);
-$nshmp-accent: mat-palette($mat-grey);
+$nshmp-accent: mat-palette($mat-grey, A200, A200, A400);
 
 /* The warn palette is optional (defaults to red). */
 $nshmp-warn: mat-palette($mat-red);

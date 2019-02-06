@@ -1,0 +1,26 @@
+
+@import '../scss/theme.scss';
+@import '../scss/styles.scss';
+
+.nshmp-control-panel-side {
+  background-color: mat-color($nshmp-accent);
+  padding: 1em;
+  position: fixed;
+  top: 64px;
+  bottom: 64px;
+  left: 0;
+  overflow: scroll;
+
+  @include xs-bp {
+    top: 56px;
+    bottom: 56px;
+  }
+}
+
+.nshmp-control-panel-top {
+  background-color: mat-color($nshmp-accent) !important;
+}
+
+.nshmp-main-content {
+  padding: 1em;
+}

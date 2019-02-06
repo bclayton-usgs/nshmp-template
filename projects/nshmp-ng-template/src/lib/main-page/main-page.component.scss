@@ -1,0 +1,16 @@
+
+@import '../scss/styles.scss';
+
+.nshmp-main {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  
+  @include xs-bp {
+    top: 56px;
+    bottom: 56px;
+  }
+}
+
