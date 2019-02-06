@@ -1,0 +1,42 @@
+
+<div fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+
+  <!-- Side control panel for medium screens and up -->
+  <div *ngIf="!mediaQuery.matches">
+    <div
+        class="mat-elevation-z6 nshmp-control-panel-side"
+        fxFlex.lt-md="0"
+        fxFlex.md="30%"
+        fxFlex.lg="25%"
+        fxFlex.xl="20%">
+      <ng-container *ngTemplateOutlet="controlPanelContent"></ng-container>
+    </div>
+  </div>
+
+  <!-- Top control panel for small screens -->
+  <div *ngIf="mediaQuery.matches">
+    <mat-expansion-panel class="nshmp-control-panel-top">
+      <mat-expansion-panel-header>Input</mat-expansion-panel-header>
+
+      <mat-divider></mat-divider>
+      <ng-container *ngTemplateOutlet="controlPanelContent"></ng-container>
+
+    </mat-expansion-panel>
+  </div>
+
+  <!-- Control panel content -->
+  <ng-template #controlPanelContent>
+      <ng-content select="nshmp-control-panel"></ng-content>
+  </ng-template>
+
+  <!-- Main content next to control panel -->
+  <div
+      class="nshmp-main-content"
+      fxFlexOffset.lt-md="0"
+      fxFlexOffset.md="30%"
+      fxFlexOffset.lg="25%"
+      fxFlexOffset.xl="20%">
+    <ng-content select="nshmp-main-content"></ng-content>
+  </div>
+
+</div>

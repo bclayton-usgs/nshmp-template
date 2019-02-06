@@ -1,12 +1,14 @@
 
+@import '../scss/styles.scss';
+
 footer {
   position: fixed;
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 2;
 }
 
 .pad-button {
   margin: 0 1em 0 0; 
 }
-
