@@ -1,8 +1,12 @@
-/* Import theme */
-@import './theme.scss';
+
+/* Import material theme */
+@import './material-theme.scss';
 
 /* Import mixins */
 @import './mixins.scss';
+
+/* Import USWDS theme */
+@import './uswds-theme.scss';
 
 body {
   margin: 0;
@@ -13,13 +17,7 @@ body {
 }
 
 .flex-spacer {
-  flex-grow: 1; 
-}
-
-@mixin xs-bp {
-  @media (max-width: 599px) {
-    @content
-  }
+  flex-grow: 1;
 }
 
 .mat-icon-button .mat-icon.mat-icon-sm,
@@ -37,9 +35,5 @@ body {
   @include mat-icon-size(36px);
 }
 
-/* 
-  Include theme styles for core and each component used in your app.
-  Alternatively, you can import and @include the theme mixins for each component
-  that you are using.
-*/
-@include angular-material-theme($nshmp-theme);
+
+

@@ -7,8 +7,8 @@
   left: 0;
   right: 0;
   bottom: 64px;
-  
-  @include xs-bp {
+
+  @include mat-xs-bp {
     top: 56px;
     bottom: 56px;
   }

@@ -1,7 +1,15 @@
 
+/* Angular material icon size */
 @mixin mat-icon-size($size) {
   font-size: $size;
   height: $size;
   width: $size;
   line-height: $size !important;
+}
+
+/* Angular material XS break point */
+@mixin mat-xs-bp {
+  @media (max-width: 599px) {
+    @content;
+  }
 }
