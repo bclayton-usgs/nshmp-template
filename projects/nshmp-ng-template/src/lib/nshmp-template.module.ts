@@ -17,6 +17,7 @@ import {
 } from '@angular/material';
 import 'hammerjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import 'uswds';
 
 import { NshmpTemplateComponent } from './nshmp-template.component';
 import { FooterComponent } from './footer/footer.component';
