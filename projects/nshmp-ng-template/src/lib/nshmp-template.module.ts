@@ -28,6 +28,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { GovBannerComponent } from './gov-banner/gov-banner.component';
+import { GovBannerHeaderComponent } from './gov-banner/gov-banner-header/gov-banner-header.component';
+import { GovBannerContentComponent } from './gov-banner/gov-banner-content/gov-banner-content.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { MainPageComponent } from './main-page/main-page.component';
     SpinnerComponent,
     SpinnerDialogComponent,
     ControlPanelComponent,
-    MainPageComponent
+    MainPageComponent,
+    GovBannerComponent,
+    GovBannerHeaderComponent,
+    GovBannerContentComponent
   ],
   imports: [
     BrowserAnimationsModule,
