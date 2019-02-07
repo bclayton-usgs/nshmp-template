@@ -16,24 +16,22 @@ body {
   cursor: pointer;
 }
 
-.flex-spacer {
-  flex-grow: 1;
-}
-
-.mat-icon-button .mat-icon.mat-icon-sm,
-.mat-icon.mat-icon-sm {
+.material-icons.mat-icon-18 {
   @include mat-icon-size(18px);
 }
 
-.mat-icon-button .mat-icon.mat-icon-md,
-.mat-icon.mat-icon-md {
+.material-icons.mat-icon-24 {
   @include mat-icon-size(24px);
 }
 
-.mat-icon-button .mat-icon-lg,
-.mat-icon.mat-icon-lg {
-  @include mat-icon-size(36px);
+.material-icons.mat-icon-28 {
+  @include mat-icon-size(28px);
 }
 
+.material-icons.mat-icon-32 {
+  @include mat-icon-size(32px);
+}
 
-
+.material-icons.mat-icon-36 {
+  @include mat-icon-size(36px);
+}
