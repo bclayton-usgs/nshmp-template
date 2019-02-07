@@ -10,6 +10,9 @@ import { ServiceInfo } from './footer/service-info/service-info.model';
 })
 export class NshmpTemplateComponent implements OnInit {
 
+  /** Whether to render the US Government banner from USWDS */
+  @Input() renderGovBanner = true;
+
   /** Navigation list for the header dropdown menu */
   @Input() navigationList: Navigation[];
 
