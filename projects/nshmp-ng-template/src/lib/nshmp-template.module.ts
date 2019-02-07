@@ -21,7 +21,6 @@ import 'uswds';
 
 import { NshmpTemplateComponent } from './nshmp-template.component';
 import { FooterComponent } from './footer/footer.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceInfoComponent } from './footer/service-info/service-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './spinner/spinner.component';
@@ -31,11 +30,12 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { GovBannerComponent } from './gov-banner/gov-banner.component';
 import { GovBannerHeaderComponent } from './gov-banner/gov-banner-header/gov-banner-header.component';
 import { GovBannerContentComponent } from './gov-banner/gov-banner-content/gov-banner-content.component';
+import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './header/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     NshmpTemplateComponent,
-    NavigationComponent,
     FooterComponent,
     ServiceInfoComponent,
     SpinnerComponent,
@@ -44,7 +44,9 @@ import { GovBannerContentComponent } from './gov-banner/gov-banner-content/gov-b
     MainPageComponent,
     GovBannerComponent,
     GovBannerHeaderComponent,
-    GovBannerContentComponent
+    GovBannerContentComponent,
+    HeaderComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserAnimationsModule,
