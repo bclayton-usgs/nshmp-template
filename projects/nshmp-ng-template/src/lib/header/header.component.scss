@@ -1,0 +1,43 @@
+
+@import '../scss/styles.scss';
+
+$navbar-small: 3em;
+
+$logo-margin-large: get-uswds-value(margin, 2);
+$logo-margin-small: get-uswds-value(margin, 1);
+
+$logo-large: get-uswds-value(height, 8);
+$logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
+
+.usa-header {
+  background-color: color('primary-darker');
+}
+
+* :focus {
+  outline: 0;
+}
+
+.usa-header::after {
+  clear: initial;
+}
+
+.usgs-logo > img {
+  height: $logo-large;
+  margin: $logo-margin-large;
+  vertical-align: middle;
+
+  @include at-media-max('desktop') {
+    height: $logo-small;
+    margin: $logo-margin-small;
+  }
+}
+
+.navigation {
+  margin-top: calc((#{$logo-large} + (#{$logo-margin-large} * 2)) / -2);
+  @include u-padding-x(2);
+
+  @include at-media-max('desktop') {
+    margin-top: calc(-#{$navbar-small} / 2);
+  }
+
+}

@@ -1,0 +1,23 @@
+
+<!-- Site navigation menu -->
+<ng-container *ngIf="navigationList">
+
+  <!-- Menu button -->
+  <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      class="pointer menu-button"
+      aria-label="Dropdown menu">
+    <mat-icon class="mat-icon-28">menu</mat-icon>
+  </button>
+
+  <!-- Dropdown menu -->
+  <mat-menu #menu="matMenu">
+    <button
+        mat-menu-item
+        *ngFor="let navItem of navigationList"
+        [routerLink]="[navItem.routerLink]">
+      {{ navItem.display }}
+    </button>
+  </mat-menu>
+</ng-container>
