@@ -1,0 +1,17 @@
+
+@import '../../scss/uswds-functions';
+
+a {
+  color: white;
+  font-size: 14px;
+}
+
+.social-links {
+  @include at-media-max('desktop') {
+    float: initial;
+  }
+}
+
+li {
+  border: none;
+}
