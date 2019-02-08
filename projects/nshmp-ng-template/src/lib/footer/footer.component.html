@@ -1,75 +1,13 @@
 
-<footer class="mat-elevation-z12">
-  <mat-toolbar color="accent">
+<footer class="usa-footer usa-footer-slim shadow-4" role="contentinfo">
 
-    <div>
-      <!-- Compute button -->
-      <button
-          mat-raised-button
-          #computeBtn
-          *ngIf="renderComputeBtn"
-          (click)="onCompute(computeBtn)"
-          [disabled]="computeBtnDisabled"
-          aria-label="Compute button"
-          color="primary"
-          id="compute-btn"
-          name="compute-btn"
-          type="button">
-        Compute
-      </button>
-    </div>
+  <div class="usa-footer-primary-section">
 
-    <div class="flex-spacer"></div>
+    <!-- Top row of government links -->
+    <nshmp-template-footer-top-navbar></nshmp-template-footer-top-navbar>
 
-    <div>
-      <!-- Service info button -->
-      <button
-          mat-icon-button
-          *ngIf="renderServiceInfoBtn"
-          (click)="onServiceInfo()"
-          [disabled]="!serviceInfo || serviceInfoBtnDisabled"
-          class="pad-button"
-          id="service-info-btn"
-          name="service-info-btn"
-          type="button">
-        <mat-icon
-            aria-label="Info button"
-            class="mat-icon-32"
-            matTooltip="Service Info"
-            matTooltipPosition="above">
-          info
-        </mat-icon>
-      </button>
+    <!-- Bottom row of government links and social media links -->
+    <nshmp-template-footer-bottom-navbar></nshmp-template-footer-bottom-navbar>
 
-      <!-- Github button -->
-      <a
-          mat-icon-button
-          [ngClass]="{'pad-button': renderRawDataBtn}"
-          href="https://github.com/usgs/nshmp-haz-ws/issues/new"
-          target="_blank">
-        <mat-icon
-            aria-label="Submit a issue with Github"
-            class="mat-icon-32"
-            matTooltip="Submit a Github issue"
-            matTooltipPosition="above"
-            svgIcon="github">
-        </mat-icon>
-      </a>
-
-      <!-- Raw data button -->
-      <button
-          mat-raised-button
-          #rawDataBtn
-          *ngIf="renderRawDataBtn"
-          (click)="onRawData(rawDataBtn)"
-          [disabled]="rawDataBtnDisabled"
-          color="warn"
-          id="raw-data-btn"
-          name="raw-data-btn"
-          type="button">
-        Raw Data
-      </button>
-    </div>
-
-  </mat-toolbar>
+  </div>
 </footer>
