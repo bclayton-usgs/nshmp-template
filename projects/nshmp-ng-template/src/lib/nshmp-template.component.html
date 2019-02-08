@@ -1,33 +1,19 @@
 
+<!-- US web design government banner -->
 <nshmp-template-gov-banner
     [renderGovBanner]="renderGovBanner">
 </nshmp-template-gov-banner>
 
-<nshmp-template-header>
-</nshmp-template-header>
+<!-- Header -->
+<nshmp-template-header></nshmp-template-header>
 
-<!-- <nshmp-template-main-page>
-  <nshmp-template-control-panel>
-    <ng-content
-        select="nshmp-control-panel"
-        ngProjectAs="nshmp-control-panel">
-    </ng-content>
-
-    <ng-content
-        select="nshmp-main-content"
-        ngProjectAs="nshmp-main-content">
-    </ng-content>
-  </nshmp-template-control-panel>
+<!-- Main content -->
+<nshmp-template-main-page>
+  <ng-content></ng-content>
 </nshmp-template-main-page>
 
+<!-- Spinner -->
 <nshmp-template-spinner></nshmp-template-spinner>
 
-<nshmp-template-footer
-    [serviceInfo]="serviceInfo"
-    [computeBtnDisabled]="computeBtnDisabled"
-    [rawDataBtnDisabled]="rawDataBtnDisabled"
-    [serviceInfoBtnDisabled]="serviceInfoBtnDisabled"
-    [renderComputeBtn]="renderComputeBtn"
-    [renderRawDataBtn]="renderRawDataBtn"
-    [renderServiceInfoBtn]="renderServiceInfoBtn">
-</nshmp-template-footer> -->
+<!-- Footer -->
+<nshmp-template-footer></nshmp-template-footer>

@@ -4,10 +4,23 @@
 $theme-font-path: '~uswds/dist/fonts';
 $theme-image-path: '~uswds/dist/img';
 
+$theme-utility-breakpoints: (
+  'card': false,        // 160px
+  'card-lg': true,      // 240px
+  'mobile': true,       // 320px
+  'mobile-lg': true,    // 480px
+  'tablet': true,       // 640px
+  'tablet-lg': true,   // 800px
+  'desktop': true,      // 1040px
+  'desktop-lg': true,   // 1200px
+  'widescreen': false,  // 1400px
+);
+
+
 @import '~uswds/dist/scss/uswds.scss';
-@import '~uswds/dist/scss/theme/uswds-theme-color';
 @import '~uswds/dist/scss/theme/uswds-theme-components';
 @import '~uswds/dist/scss/theme/uswds-theme-general';
-@import '~uswds/dist/scss/theme/uswds-theme-spacing';
 @import '~uswds/dist/scss/theme/uswds-theme-typography';
+@import '~uswds/dist/scss/theme/uswds-theme-spacing';
+@import '~uswds/dist/scss/theme/uswds-theme-color';
 @import '~uswds/dist/scss/theme/uswds-theme-utilities';

@@ -21,7 +21,6 @@ import 'uswds';
 
 import { NshmpTemplateComponent } from './nshmp-template.component';
 import { FooterComponent } from './footer/footer.component';
-import { ServiceInfoComponent } from './footer/service-info/service-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.component';
@@ -32,12 +31,13 @@ import { GovBannerHeaderComponent } from './gov-banner/gov-banner-header/gov-ban
 import { GovBannerContentComponent } from './gov-banner/gov-banner-content/gov-banner-content.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './header/navigation/navigation.component';
+import { FooterTopNavbarComponent } from './footer/footer-top-navbar/footer-top-navbar.component';
+import { FooterBottomNavbarComponent } from './footer/footer-bottom-navbar/footer-bottom-navbar.component';
 
 @NgModule({
   declarations: [
     NshmpTemplateComponent,
     FooterComponent,
-    ServiceInfoComponent,
     SpinnerComponent,
     SpinnerDialogComponent,
     ControlPanelComponent,
@@ -46,7 +46,9 @@ import { NavigationComponent } from './header/navigation/navigation.component';
     GovBannerHeaderComponent,
     GovBannerContentComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterTopNavbarComponent,
+    FooterBottomNavbarComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,7 +68,7 @@ import { NavigationComponent } from './header/navigation/navigation.component';
     RouterModule.forRoot([])
   ],
   exports: [NshmpTemplateComponent],
-  entryComponents: [ ServiceInfoComponent, SpinnerDialogComponent ],
+  entryComponents: [ SpinnerDialogComponent ],
   providers: [
     {
       provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {

@@ -1,0 +1,18 @@
+
+@import '../../scss/uswds-functions';
+
+a {
+  color: white;
+  font-size: 14px;
+}
+
+.navbar-border {
+
+  @include at-media-max('mobile-lg') {
+    border-width: 0;
+  }
+}
+
+li {
+  border: none;
+}

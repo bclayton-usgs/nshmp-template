@@ -1,14 +1,13 @@
 
-@import '../scss/styles.scss';
+@import '../scss/uswds-functions';
 
-footer {
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
+.usa-footer-primary-section {
+  background-color: color('primary-darker');
 }
 
-.pad-button {
-  margin: 0 1em 0 0; 
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

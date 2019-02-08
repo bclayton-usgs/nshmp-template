@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServiceInfoComponent } from './service-info.component';
+import { FooterBottomNavbarComponent } from './footer-bottom-navbar.component';
 
-describe('ServiceInfoComponent', () => {
-  let component: ServiceInfoComponent;
-  let fixture: ComponentFixture<ServiceInfoComponent>;
+describe('FooterBottomNavbarComponent', () => {
+  let component: FooterBottomNavbarComponent;
+  let fixture: ComponentFixture<FooterBottomNavbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ServiceInfoComponent ]
+      declarations: [ FooterBottomNavbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServiceInfoComponent);
+    fixture = TestBed.createComponent(FooterBottomNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

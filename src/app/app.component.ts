@@ -1,11 +1,9 @@
-import { Component, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { Subscription, interval } from 'rxjs';
+
 import {
   Navigation,
-  ServiceInfo,
-  FooterService,
-  SpinnerService} from 'projects/nshmp-ng-template/src/public_api';
-import { Subscription, Observable, interval } from 'rxjs';
-import { MatButton } from '@angular/material';
+  SpinnerService } from 'projects/nshmp-ng-template/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -25,60 +23,36 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   ];
 
-  serviceInfo: ServiceInfo = {
-    threads: 1,
-    service: [
-      {
-        name: 'nshmp-haz',
-        url: 'github/nshmp-haz',
-        version: '1'
-      },
-      {
-        name: 'nshmp-haz-ws',
-        url: 'github/nshmp-haz-ws',
-        version: '1'
-      }
-    ]
-  };
+  spinnerSubscription: Subscription;
 
-  computeSubscription: Subscription;
-  rawDataSubscription: Subscription;
+  fillerContent = Array.from({length: 10}, () =>
+    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.`
+  );
 
-  spinnerOn = false;
-
-  constructor(
-      private footerService: FooterService,
-      private spinnerService: SpinnerService) {
+  constructor(private spinnerService: SpinnerService) {
     console.log('AppComponent constructor');
   }
 
   ngOnInit() {
     this.spinner();
-
-    this.computeSubscription = this.footerService.computeButton
-      .subscribe((btnEl: MatButton) => {
-        console.log('Compute button pressed!', btnEl);
-      });
-
-    this.rawDataSubscription = this.footerService.rawDataButton
-      .subscribe((btnEl: MatButton) => {
-        console.log('Raw data button pressed!', btnEl);
-      });
-
   }
 
   ngOnDestroy() {
-    this.computeSubscription.unsubscribe();
-    this.rawDataSubscription.unsubscribe();
+    this.spinnerSubscription.unsubscribe();
   }
 
   spinner() {
-    const subscription = interval(10000).subscribe(() => {
+    this.spinnerSubscription = interval(10000).subscribe(() => {
       this.spinnerService.removeSpinner();
     });
 
-    this.spinnerService.showSpinnerLoading(subscription);
-
+    this.spinnerService.showSpinnerLoading(this.spinnerSubscription);
   }
 
 }
