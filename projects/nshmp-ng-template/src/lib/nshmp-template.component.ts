@@ -13,6 +13,9 @@ export class NshmpTemplateComponent implements OnInit {
   /** Whether to render the US Government banner from USWDS */
   @Input() renderGovBanner = true;
 
+  /** Whether to render the search bar on the header */
+  @Input() renderSearchBar = true;
+
   /** Navigation list for the header dropdown menu */
   @Input()
   set navigationList(navigationList: Navigation[]) {

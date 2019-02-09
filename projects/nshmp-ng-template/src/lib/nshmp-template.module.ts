@@ -11,7 +11,6 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatDialogModule,
-  MAT_DIALOG_DEFAULT_OPTIONS,
   MatSidenavModule,
   MatExpansionModule
 } from '@angular/material';
@@ -33,6 +32,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './header/navigation/navigation.component';
 import { FooterTopNavbarComponent } from './footer/footer-top-navbar/footer-top-navbar.component';
 import { FooterBottomNavbarComponent } from './footer/footer-bottom-navbar/footer-bottom-navbar.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { FooterBottomNavbarComponent } from './footer/footer-bottom-navbar/foote
     HeaderComponent,
     NavigationComponent,
     FooterTopNavbarComponent,
-    FooterBottomNavbarComponent
+    FooterBottomNavbarComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -68,14 +69,6 @@ import { FooterBottomNavbarComponent } from './footer/footer-bottom-navbar/foote
     RouterModule.forRoot([])
   ],
   exports: [NshmpTemplateComponent],
-  entryComponents: [ SpinnerDialogComponent ],
-  providers: [
-    {
-      provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {
-        disableClose: true,
-        hasBackdrop: true
-      }
-    }
-  ]
+  entryComponents: [ SpinnerDialogComponent ]
 })
 export class NshmpTemplateModule { }
