@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { SpinnerDialogComponent } from './spinner-dialog/spinner-dialog.component';
 import { SpinnerService, ShowSpinnerNextArgument } from './spinner.service';
+import { Overlay } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'nshmp-template-spinner',
@@ -17,7 +18,8 @@ export class SpinnerComponent implements OnInit, OnDestroy {
 
   constructor(
       private spinnerService: SpinnerService,
-      private spinnerDialog: MatDialog) { }
+      private spinnerDialog: MatDialog,
+      private overlay: Overlay) { }
 
   ngOnInit() {
     this.spinnerSubscription = this.spinnerService
@@ -41,7 +43,12 @@ export class SpinnerComponent implements OnInit, OnDestroy {
     };
 
     this.spinnerDialogRef = this.spinnerDialog.open(
-        SpinnerDialogComponent, { data });
+        SpinnerDialogComponent, {
+          data,
+          scrollStrategy: this.overlay.scrollStrategies.reposition(),
+          hasBackdrop: true,
+          disableClose: true,
+        });
 
   }
 

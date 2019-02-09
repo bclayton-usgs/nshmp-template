@@ -1,18 +1,28 @@
 
 <header class="usa-header usa-header-basic">
 
-  <!-- USGS logo -->
-  <div class="usa-nav-container">
-    <div routerLink="/" class="usa-navbar pointer usgs-logo">
-      <img
-        src="assets/usgs-logo.svg"
-        alt="U.S. Geological Survey"
-        title="U.S. Geological Survey Logo">
-    </div>
-  </div>
+  <div class="grid-row">
 
-  <!-- Site navigation -->
-  <nshmp-template-navigation class="navigation float-right">
-  </nshmp-template-navigation>
+    <!-- USGS logo -->
+    <div class="grid-col-12 card-lg:grid-col">
+      <div routerLink="/" class="pointer usgs-logo border-0 width-auto">
+        <img src="assets/usgs-logo.svg" alt="U.S. Geological Survey" title="U.S. Geological Survey Logo">
+      </div>
+    </div>
+
+
+    <!-- USGS site width search bar -->
+    <ng-container *ngIf="renderSearchBar">
+      <nshmp-template-search-bar class="grid-col-12 card-lg:grid-col">
+      </nshmp-template-search-bar>
+  </ng-container>
+
+    <!-- Site navigation -->
+    <div class="grid-col-12 card-lg:grid-col-2 tablet:grid-col-1">
+      <nshmp-template-navigation class="float-right margin-x-2">
+      </nshmp-template-navigation>
+    </div>
+
+  </div>
 
 </header>

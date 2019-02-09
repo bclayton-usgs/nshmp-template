@@ -1,5 +1,5 @@
 
-@import '../scss/styles.scss';
+@import '../scss/uswds-functions';
 
 $navbar-small: 3em;
 
@@ -17,8 +17,8 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
   outline: 0;
 }
 
-.usa-header::after {
-  clear: initial;
+.grid-row {
+  align-items: center;
 }
 
 .usgs-logo > img {
@@ -32,12 +32,8 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
   }
 }
 
-.navigation {
-  margin-top: calc((#{$logo-large} + (#{$logo-margin-large} * 2)) / -2);
-  @include u-padding-x(2);
-
-  @include at-media-max('desktop') {
-    margin-top: calc(-#{$navbar-small} / 2);
+nshmp-template-navigation {
+  @include at-media-max('card-lg') {
+    float: initial;
   }
-
 }

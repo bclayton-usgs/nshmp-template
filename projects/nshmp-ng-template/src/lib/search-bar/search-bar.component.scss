@@ -1,0 +1,11 @@
+
+@import '../scss/uswds-functions';
+
+.search-button {
+  background-color: white;
+  color: color('base');
+}
+
+.usa-search-small [type=submit] {
+  background-image: none;
+}
