@@ -1,0 +1,83 @@
+
+/* Angular Material Design Theme */
+
+/* Import Angular material theming */
+@import '~@angular/material/theming';
+
+/* Import Google material icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+
+/*
+  Include the common styles for Angular Material. We include this here so that you only
+  have to load a single css file for Angular Material in your app.
+  Be sure that you only ever include this mixin once!
+*/
+@include mat-core();
+
+/*
+  Custom theme to match the USA web design primary darker color
+  (https://v2.designsystem.digital.gov/design-tokens/color/theme-tokens/).
+  Generated from http://mcg.mbitson.com.
+*/
+$usa-primary-darker: (
+  50 : #e4e9f0,
+  100 : #bac7d9,
+  200 : #8da2c0,
+  300 : #5f7ca6,
+  400 : #3c6093,
+  500 : #1a4480,
+  600 : #173e78,
+  700 : #13356d,
+  800 : #0f2d63,
+  900 : #081f50,
+  A100 : #85a4ff,
+  A200 : #527eff,
+  A400 : #1f58ff,
+  A700 : #0546ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+/*
+  Define the palettes for your theme using the Material Design palettes available in palette.scss
+  (imported above). For each palette, you can optionally specify a default, lighter, and darker
+  hue. Available color palettes: https://material.io/design/color/
+*/
+$nshmp-primary: mat-palette($usa-primary-darker);
+$nshmp-accent: mat-palette($mat-grey, A200, A200, A400);
+
+/* The warn palette is optional (defaults to red). */
+$nshmp-warn: mat-palette($mat-red);
+
+/* Create the theme object (a Sass map containing all of the palettes). */
+$nshmp-theme: mat-light-theme(
+  $nshmp-primary,
+  $nshmp-accent,
+  $nshmp-warn);
+
+/*
+  Include theme styles for core and each component used in your app.
+  Alternatively, you can import and @include the theme mixins for each component
+  that you are using.
+*/
+@include angular-material-theme($nshmp-theme);
+
+@mixin ng-mat-color($args...) {
+  @include mat-color($args...);
+}
