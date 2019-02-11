@@ -35,9 +35,7 @@ export class AppComponent implements OnInit, OnDestroy {
     est laborum.`
   );
 
-  constructor(private spinnerService: SpinnerService) {
-    console.log('AppComponent constructor');
-  }
+  constructor(private spinnerService: SpinnerService) { }
 
   ngOnInit() {
     this.spinner();
