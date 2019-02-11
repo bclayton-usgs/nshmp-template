@@ -8,7 +8,7 @@
   <div class="grid-row">
 
     <!-- USGS logo -->
-    <div class="grid-col-12 card-lg:grid-col">
+    <div class="grid-col">
       <div class="usgs-logo border-0 width-auto">
         <img
             alt="U.S. Geological Survey"
@@ -21,12 +21,13 @@
 
     <!-- USGS site width search bar -->
     <ng-container *ngIf="renderSearchBar">
-      <nshmp-template-search-bar class="grid-col-12 card-lg:grid-col">
+      <nshmp-template-search-bar
+          class="search-bar grid-col-12 mobile:grid-col">
       </nshmp-template-search-bar>
   </ng-container>
 
     <!-- Site navigation -->
-    <div class="grid-col-12 card-lg:grid-col-2 tablet:grid-col-1">
+    <div class="grid-col-4 card-lg:grid-col-2 desktop:grid-col-1">
       <nshmp-template-navigation class="float-right margin-x-2">
       </nshmp-template-navigation>
     </div>
