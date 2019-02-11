@@ -1,0 +1,87 @@
+
+/* Import material theme */
+@import './material-theme.scss';
+
+/* Import mixins */
+@import './mixins.scss';
+
+/* Import USWDS theme */
+@import './uswds-theme.scss';
+
+body {
+  margin: 0;
+  height: 100%;
+  position: relative;
+}
+
+html {
+  height: 100%;
+  position: relative;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+p {
+  @include u-measure('none');
+}
+
+nshmp-template {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 6em;
+  display: block;
+
+  @include at-media-max('desktop-lg') {
+    padding-bottom: 10em;
+  }
+
+  @include at-media-max('desktop') {
+    padding-bottom: 12em;
+  }
+
+  @include at-media-max('tablet-lg') {
+    padding-bottom: 14em;
+  }
+
+  @include at-media-max('tablet') {
+    padding-bottom: 20em;
+  }
+
+  @include at-media-max('mobile-lg') {
+    padding-bottom: 24em;
+  }
+
+  @include at-media-max('mobile') {
+    padding-bottom: 26em;
+  }
+
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.material-icons.mat-icon-18 {
+  @include mat-icon-size(18px);
+}
+
+.material-icons.mat-icon-24 {
+  @include mat-icon-size(24px);
+}
+
+.material-icons.mat-icon-28 {
+  @include mat-icon-size(28px);
+}
+
+.material-icons.mat-icon-32 {
+  @include mat-icon-size(32px);
+}
+
+.material-icons.mat-icon-36 {
+  @include mat-icon-size(36px);
+}
