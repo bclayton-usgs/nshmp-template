@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'nshmp-template-gtm-footer',
   templateUrl: './gtm-footer.component.html',
-  styleUrls: ['./gtm-footer.component.scss']
+  styles: []
 })
 export class GtmFooterComponent implements OnInit {
 
