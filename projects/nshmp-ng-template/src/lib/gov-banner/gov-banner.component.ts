@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'nshmp-template-gov-banner',
   templateUrl: './gov-banner.component.html',
-  styleUrls: ['./gov-banner.component.scss']
+  styles: []
 })
 export class GovBannerComponent implements OnInit {
 

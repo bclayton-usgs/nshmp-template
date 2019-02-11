@@ -1,12 +1,12 @@
 
 /* Import material theme */
-@import './material-theme.scss';
+@import './material-theme';
 
 /* Import mixins */
-@import './mixins.scss';
+@import './mixins';
 
 /* Import USWDS theme */
-@import './uswds-theme.scss';
+@import './uswds-theme';
 
 body {
   margin: 0;
