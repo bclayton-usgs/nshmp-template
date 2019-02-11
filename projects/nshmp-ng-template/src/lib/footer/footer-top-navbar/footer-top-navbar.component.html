@@ -6,25 +6,18 @@
 
       <!-- Government sites -->
       <ul class="add-list-reset grid-row grid-gap padding-x-2">
-        <li class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content">
-          <a class="usa-footer-primary-link" href="https://www.doi.gov/privacy">DOI Privacy Policy</a>
+
+        <li
+            class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content"
+            *ngFor="let link of footerLinks">
+          <a
+              class="usa-footer-primary-link"
+              [href]="link.href"
+              target="_blank">
+            {{ link.display }}
+          </a>
         </li>
 
-        <li class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content">
-          <a class="usa-footer-primary-link" href="https://www.usgs.gov/laws/policies_notices.html">Legal</a>
-        </li>
-
-        <li class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content">
-          <a class="usa-footer-primary-link" href="https://www2.usgs.gov/laws/accessibility.html">Accessibility</a>
-        </li>
-
-        <li class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content">
-          <a class="usa-footer-primary-link" href="https://answers.usgs.gov/">Contact USGS</a>
-        </li>
-
-        <li class="grid-col-4 tablet:grid-col-auto usa-footer-primary-content">
-          <a class="usa-footer-primary-link" href="https://www.usgs.gov/sitemap.html">Site Map</a>
-        </li>
       </ul>
 
     </nav>
