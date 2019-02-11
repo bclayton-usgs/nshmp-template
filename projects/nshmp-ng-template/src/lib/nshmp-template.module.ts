@@ -33,6 +33,8 @@ import { NavigationComponent } from './header/navigation/navigation.component';
 import { FooterTopNavbarComponent } from './footer/footer-top-navbar/footer-top-navbar.component';
 import { FooterBottomNavbarComponent } from './footer/footer-bottom-navbar/footer-bottom-navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { GtmHeaderComponent } from './header/gtm-header/gtm-header.component';
+import { GtmFooterComponent } from './footer/gtm-footer/gtm-footer.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     NavigationComponent,
     FooterTopNavbarComponent,
     FooterBottomNavbarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    GtmHeaderComponent,
+    GtmFooterComponent
   ],
   imports: [
     BrowserAnimationsModule,
