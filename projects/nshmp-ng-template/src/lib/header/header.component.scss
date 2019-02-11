@@ -32,8 +32,15 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
   }
 }
 
-nshmp-template-navigation {
-  @include at-media-max('card-lg') {
-    float: initial;
+// nshmp-template-navigation {
+//   @include at-media-max('card-lg') {
+//     float: initial;
+//   }
+// }
+
+.search-bar {
+  @include at-media-max('mobile') {
+    padding: 6px;
+    order: 999;
   }
 }
