@@ -7,59 +7,18 @@
     <nav class="usa-footer-nav margin-x-0">
 
       <ul class="add-list-reset grid-row grid-gap padding-x-2">
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
+
+        <li
+            class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content"
+            *ngFor="let link of governmentLinks">
           <a
               class="usa-footer-primary-link"
-              href="https://www.doi.gov/"
+              [href]="link.href"
               target="_blank">
-            U.S. Department of the Interior
+            {{ link.display }}
           </a>
         </li>
 
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://www.doioig.gov/"
-              target="_blank">
-            DOI Inspector General
-          </a>
-        </li>
-
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://www.whitehouse.gov/"
-              target="_blank">
-            White House
-          </a>
-        </li>
-
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://www.whitehouse.gov/omb/management/egov/"
-              target="_blank">
-            E-gov
-          </a>
-        </li>
-
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://www.doi.gov/pmb/eeo/no-fear-act"
-              target="_blank">
-            No Fear Act
-          </a>
-        </li>
-
-        <li class="grid-col-6 tablet:grid-col-4 desktop:grid-col-auto usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://www2.usgs.gov/foia"
-              target="_blank">
-            FOIA
-          </a>
-        </li>
       </ul>
 
     </nav>
@@ -70,59 +29,20 @@
     <div class="usa-footer-nav margin-x-0">
 
       <ul class="add-list-reset grid-row grid-gap-2 float-right social-links padding-x-2">
-        <li class="usa-footer-primary-content">
+
+        <li
+            class="usa-footer-primary-content"
+            *ngFor="let link of socialLinks">
           <a
+              [matTooltip]="link.tooltipText"
+              matTooltipPosition="above"
               class="usa-footer-primary-link"
-              href="https://twitter.com/usgs"
+              [href]="link.href"
               target="_blank">
-            <i class="fab fa-twitter-square fa-lg"></i>
+            <i class="fab fa-lg {{link.iconClass}}"></i>
           </a>
         </li>
 
-        <li class="usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://facebook.com/usgeologicalsurvey"
-              target="_blank">
-            <i class="fab fa-facebook-square fa-lg"></i>
-          </a>
-        </li>
-
-        <li class="usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://github.com/usgs"
-              target="_blank">
-            <i class="fab fa-github fa-lg"></i>
-          </a>
-        </li>
-
-        <li class="usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://flickr.com/usgeologicalsurvey"
-              target="_blank">
-            <i class="fab fa-flickr fa-lg"></i>
-          </a>
-        </li>
-
-        <li class="usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="http://youtube.com/usgs"
-              target="_blank">
-            <i class="fab fa-youtube fa-lg"></i>
-          </a>
-        </li>
-
-        <li class="usa-footer-primary-content">
-          <a
-              class="usa-footer-primary-link"
-              href="https://instagram.com/usgs"
-              target="_blank">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-        </li>
       </ul>
 
     </div>
