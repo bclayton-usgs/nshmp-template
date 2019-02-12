@@ -4,7 +4,9 @@
 npm run build
 
 # Bump version
+cd projects/nshmp-ng-template
 npm version patch
+cd ../../
 
 # Push tags
 git push
