@@ -3,5 +3,8 @@
   "dest": "../../dist/nshmp-ng-template",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@nshmp/nshmp-template-schematics"
+  ]
 }
