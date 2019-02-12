@@ -6,7 +6,7 @@ import { NavigationService } from './header/navigation/navigation.service';
 @Component({
   selector: 'nshmp-template',
   templateUrl: './nshmp-template.component.html',
-  styleUrls: []
+  styleUrls: ['./nshmp-template.component.scss']
 })
 export class NshmpTemplateComponent implements OnInit {
 
