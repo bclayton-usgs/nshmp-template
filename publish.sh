@@ -7,10 +7,6 @@ npm run build
 cd projects/nshmp-ng-template
 npm version patch
 
-# Push tags
-git push
-git push --tags
-
 # Lib dir
 cd ../../dist/nshmp-ng-template
 
