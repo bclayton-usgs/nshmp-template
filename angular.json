@@ -22,10 +22,6 @@
               "src/favicon.ico",
               {
                 "glob": "**/*",
-                "input": "../node_modules/nshmp-ng-template/assets",
-                "output": "./assets/nshmp-ng-template/"
-              }, {
-                "glob": "**/*",
                 "input": "projects/nshmp-ng-template/src/assets",
                 "output": "./assets/"
               }, {
