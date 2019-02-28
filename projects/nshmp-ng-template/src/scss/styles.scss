@@ -1,4 +1,3 @@
-
 /* Import material theme */
 @import './material-theme';
 
@@ -31,35 +30,15 @@ p {
 
 nshmp-template {
   min-height: 100%;
+  height: auto;
   overflow: hidden;
   position: relative;
-  padding-bottom: 6em;
-  display: block;
-
-  @include at-media-max('desktop-lg') {
-    padding-bottom: 10em;
-  }
-
-  @include at-media-max('desktop') {
-    padding-bottom: 12em;
-  }
-
-  @include at-media-max('tablet-lg') {
-    padding-bottom: 14em;
-  }
-
-  @include at-media-max('tablet') {
-    padding-bottom: 20em;
-  }
-
-  @include at-media-max('mobile-lg') {
-    padding-bottom: 24em;
-  }
-
-  @include at-media-max('mobile') {
-    padding-bottom: 26em;
-  }
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
 }
 
 .pointer {
