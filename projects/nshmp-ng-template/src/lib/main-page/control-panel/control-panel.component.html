@@ -1,0 +1,19 @@
+<!-- Control panel and content -->
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- Control panel -->
+  <mat-sidenav
+      mode="side"
+      class="control-panel"
+      [opened]="showControlPanel">
+    <ng-content select="[controlPanel]"></ng-content>
+  </mat-sidenav>
+
+  <!-- Content -->
+  <mat-sidenav-content
+      class="content"
+      *ngIf="showContent">
+    <ng-content select="[mainContent]"></ng-content>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,26 @@
+@import '../../../scss/uswds-functions';
+
+:host {
+  height: 100%;
+}
+
+.sidenav-container {
+  height: 100%;
+  width: 100%;
+}
+
+.control-panel {
+  width: 400px;
+  padding: 1em;
+  @include u-bg('base-lightest');
+
+  @include at-media-max('desktop') {
+    width: 100%;
+  }
+}
+
+.content {
+  padding: 1em;
+  @include u-bg('white');
+}
+
