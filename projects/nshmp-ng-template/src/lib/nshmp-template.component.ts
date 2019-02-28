@@ -22,7 +22,7 @@ export class NshmpTemplateComponent implements OnInit {
   /** Navigation list for the header dropdown menu */
   @Input()
   set navigationList(navigationList: Navigation[]) {
-    this.navigationService.navigationList.next(navigationList);
+    this.navigationService.set(navigationList);
   }
 
   constructor(private navigationService: NavigationService) { }

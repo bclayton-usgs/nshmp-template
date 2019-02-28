@@ -47,10 +47,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   spinner() {
     this.spinnerSubscription = interval(10000).subscribe(() => {
-      this.spinnerService.removeSpinner();
+      this.spinnerService.remove();
     });
 
-    this.spinnerService.showSpinnerLoading(this.spinnerSubscription);
+    this.spinnerService.show('Loading ...', this.spinnerSubscription);
   }
 
 }

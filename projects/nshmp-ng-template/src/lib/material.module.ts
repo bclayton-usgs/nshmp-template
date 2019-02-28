@@ -14,8 +14,6 @@ import {
 import 'hammerjs';
 import 'uswds';
 
-
-
 @NgModule({
   exports: [
     MatButtonModule,

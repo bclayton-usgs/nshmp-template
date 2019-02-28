@@ -23,11 +23,11 @@ export class SpinnerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.spinnerSubscription = this.spinnerService
-        ._showSpinner.subscribe((nextArg) => {
+        ._onShow().subscribe((nextArg) => {
           this.openDialog(nextArg);
         });
 
-    this.spinnerService._removeSpinner.subscribe(() => {
+    this.spinnerService._onRemove().subscribe(() => {
       this.spinnerDialogRef.close();
     });
   }
@@ -49,7 +49,6 @@ export class SpinnerComponent implements OnInit, OnDestroy {
           hasBackdrop: true,
           disableClose: true,
         });
-
   }
 
 }
