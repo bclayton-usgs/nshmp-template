@@ -30,8 +30,10 @@
       <div class="grid-row float-right">
 
         <!-- Header controls -->
-        <nshmp-template-header-controls *ngIf="renderControlPanel">
-        </nshmp-template-header-controls>
+        <ng-template ngIf="renderHeaderControls">
+          <nshmp-template-header-controls>
+          </nshmp-template-header-controls>
+        </ng-template>
 
         <!-- Header dropdown menu -->
         <nshmp-template-navigation class="margin-x-1"></nshmp-template-navigation>

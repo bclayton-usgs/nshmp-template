@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-
-import { ControlPanelService } from '../main-page/control-panel/control-panel.service';
+import { ControlPanelService } from '../control-panel/control-panel.service';
 
 @Component({
   selector: 'nshmp-template-header',
@@ -11,25 +10,21 @@ import { ControlPanelService } from '../main-page/control-panel/control-panel.se
 export class HeaderComponent implements OnInit, OnDestroy {
 
   /**
-   * Whether to render the control panel toggles.
-   * Default: false
-   */
-  @Input() renderControlPanel: boolean;
-
-  /**
    * Whether to render the search bar on the header.
    * Default: true
    */
   @Input() renderSearchBar: boolean;
+
+  renderHeaderControls = false;
 
   controlPanelSubscription: Subscription;
 
   constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
-    this.controlPanelSubscription = this.controlPanelService._onToggle()
-        .subscribe(renderControlPanel => {
-          this.renderControlPanel = renderControlPanel;
+    this.controlPanelSubscription = this.controlPanelService.onControlPanel()
+        .subscribe(renderHeaderControls => {
+          this.renderHeaderControls = renderHeaderControls;
         });
   }
 

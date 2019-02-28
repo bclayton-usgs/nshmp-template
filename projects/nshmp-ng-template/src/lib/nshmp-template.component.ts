@@ -10,9 +10,6 @@ import { NavigationService } from './header/navigation/navigation.service';
 })
 export class NshmpTemplateComponent implements OnInit {
 
-  /** Whether to render the control panel and content */
-  @Input() renderControlPanel = false;
-
   /** Whether to render the US Government banner from USWDS */
   @Input() renderGovBanner = true;
 
