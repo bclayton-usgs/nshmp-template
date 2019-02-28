@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   constructor(private navigationService: NavigationService) { }
 
   ngOnInit() {
-    this.navSubscription = this.navigationService.navigationList
+    this.navSubscription = this.navigationService._onSet()
         .subscribe((navigationList) => {
           this.navigationList = navigationList;
         });

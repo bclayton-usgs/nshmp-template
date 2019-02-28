@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject, Observable } from 'rxjs';
 
+/**
+ * Get screen size changes.
+ */
 @Injectable({
   providedIn: 'root'
 })
