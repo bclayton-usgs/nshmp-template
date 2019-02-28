@@ -1,10 +1,9 @@
-
 <!-- Google Tag Manager from WRET -->
 <nshmp-template-gtm-header>
 </nshmp-template-gtm-header>
 
+<!-- Header -->
 <header class="usa-header usa-header-basic">
-
   <div class="grid-row">
 
     <!-- USGS logo -->
@@ -19,19 +18,26 @@
       </div>
     </div>
 
-    <!-- USGS site width search bar -->
+    <!-- USGS site wide search bar -->
     <ng-container *ngIf="renderSearchBar">
       <nshmp-template-search-bar
-          class="search-bar grid-col-12 mobile:grid-col">
+          class="search-bar grid-col-12 mobile-lg:grid-col">
       </nshmp-template-search-bar>
-  </ng-container>
+    </ng-container>
 
-    <!-- Site navigation -->
-    <div class="grid-col-4 card-lg:grid-col-2 desktop:grid-col-1">
-      <nshmp-template-navigation class="float-right margin-x-2">
-      </nshmp-template-navigation>
+    <!-- Header controls and site navigation -->
+    <div class="grid-col-8 mobile-lg:grid-col-4 desktop:grid-col-2">
+      <div class="grid-row float-right">
+
+        <!-- Header controls -->
+        <nshmp-template-header-controls *ngIf="renderControlPanel">
+        </nshmp-template-header-controls>
+
+        <!-- Header dropdown menu -->
+        <nshmp-template-navigation class="margin-x-1"></nshmp-template-navigation>
+
+      </div>
     </div>
 
   </div>
-
 </header>
