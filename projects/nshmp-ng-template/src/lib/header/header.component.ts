@@ -8,6 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   /**
+   * Whether to render the control panel toggles.
+   * Default: false
+   */
+  @Input() renderControlPanel: boolean;
+
+  /**
    * Whether to render the search bar on the header.
    * Default: true
    */

@@ -1,4 +1,3 @@
-
 @import '../../scss/uswds-functions';
 
 $navbar-small: 3em;
@@ -33,8 +32,7 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
 }
 
 .search-bar {
-  @include at-media-max('mobile') {
-    padding: 6px;
-    order: 999;
+  @include at-media-max('mobile-lg') {
+    display: none;
   }
 }

@@ -1,0 +1,5 @@
+@import '../../../scss/uswds-functions';
+
+.mat-button-toggle-checked {
+  @include u-bg('base-light');
+}

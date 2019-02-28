@@ -1,16 +1,29 @@
-
 <!-- US web design government banner -->
 <nshmp-template-gov-banner [renderGovBanner]="renderGovBanner">
 </nshmp-template-gov-banner>
 
 <!-- Header -->
-<nshmp-template-header [renderSearchBar]="renderSearchBar">
+<nshmp-template-header
+    [renderControlPanel]="renderControlPanel"
+    [renderSearchBar]="renderSearchBar">
 </nshmp-template-header>
 
-<!-- Main content -->
-<nshmp-template-main-page>
-  <ng-content></ng-content>
+<!-- Main content with control panel -->
+<nshmp-template-main-page
+    *ngIf="renderControlPanel; else withoutControlPanel"
+    [renderControlPanel]="renderControlPanel">
+
+  <ng-content select="[controlPanel]" controlPanel></ng-content>
+  <ng-content select="[mainContent]" mainContent></ng-content>
+
 </nshmp-template-main-page>
+
+<!-- Main content without control panel -->
+<ng-template #withoutControlPanel>
+  <nshmp-template-main-page [renderControlPanel]="renderControlPanel">
+    <ng-content></ng-content>
+  </nshmp-template-main-page>
+</ng-template>
 
 <!-- Spinner -->
 <nshmp-template-spinner>
