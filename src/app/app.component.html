@@ -1,16 +1,6 @@
 <nshmp-template
     [navigationList]="navigationList"
     [renderGovBanner]="true"
-    [renderSearchBar]="true"
-    [renderControlPanel]="true">
-
-  <!-- Control panel content -->
-  <app-control-panel controlPanel>
-  </app-control-panel>
-
-  <!-- Main Content -->
-  <div mainContent>
-    <p *ngFor="let content of fillerContent">{{ content }}</p>
-  </div>
-
+    [renderSearchBar]="true">
+  <app-example-app></app-example-app>
 </nshmp-template>

@@ -6,12 +6,14 @@ import {
 
 import { AppComponent } from './app.component';
 import { NshmpTemplateModule } from 'projects/nshmp-ng-template/src/public_api';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
+import { ControlPanelComponent } from './example-app/control-panel/control-panel.component';
+import { ExampleAppComponent } from './example-app/example-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    ExampleAppComponent
   ],
   imports: [
     BrowserModule,

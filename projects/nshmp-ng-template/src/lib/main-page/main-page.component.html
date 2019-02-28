@@ -1,15 +1,4 @@
 <!-- Main content -->
 <main [ngClass]="{'padding-2': !renderControlPanel}">
-
-  <!-- With control panel and content -->
-  <nshmp-template-control-panel *ngIf="renderControlPanel; else withoutControlPanel">
-    <ng-content select="[controlPanel]" controlPanel></ng-content>
-    <ng-content select="[mainContent]" mainContent></ng-content>
-  </nshmp-template-control-panel>
-
-  <!-- Without control panel -->
-  <ng-template #withoutControlPanel>
-    <ng-content></ng-content>
-  </ng-template>
-
+  <ng-content></ng-content>
 </main>

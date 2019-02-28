@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ControlPanelService } from '../control-panel/control-panel.service';
 import { Subscription } from 'rxjs';
-
-import { ControlPanelService } from './control-panel/control-panel.service';
 
 @Component({
   selector: 'nshmp-template-main-page',
@@ -10,18 +9,13 @@ import { ControlPanelService } from './control-panel/control-panel.service';
 })
 export class MainPageComponent implements OnInit, OnDestroy {
 
-  /**
-   * Whether to render the control panel.
-   * Default: false
-   */
-  @Input() renderControlPanel: boolean;
-
+  renderControlPanel = false;
   controlPanelSubscription: Subscription;
 
   constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
-    this.controlPanelSubscription = this.controlPanelService._onToggle()
+    this.controlPanelSubscription = this.controlPanelService.onControlPanel()
         .subscribe(renderControlPanel => {
           this.renderControlPanel = renderControlPanel;
         });
