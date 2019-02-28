@@ -1,4 +1,13 @@
+main {
+  display: flex;
+  flex: 1 1 auto;
+  align-self: auto;
+  flex-direction: column;
+}
 
-.nshmp-main {
-  margin: 1em;
+:host {
+  display: flex;
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
 }
