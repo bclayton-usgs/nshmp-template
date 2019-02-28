@@ -1,11 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { ControlPanelService } from '../main-page/control-panel/control-panel.service';
 
 @Component({
   selector: 'nshmp-template-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   /**
    * Whether to render the control panel toggles.
@@ -19,9 +22,19 @@ export class HeaderComponent implements OnInit {
    */
   @Input() renderSearchBar: boolean;
 
-  constructor() { }
+  controlPanelSubscription: Subscription;
+
+  constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
+    this.controlPanelSubscription = this.controlPanelService._onToggle()
+        .subscribe(renderControlPanel => {
+          this.renderControlPanel = renderControlPanel;
+        });
+  }
+
+  ngOnDestroy() {
+    this.controlPanelSubscription.unsubscribe();
   }
 
 }
