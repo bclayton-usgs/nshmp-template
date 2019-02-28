@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { HeaderControlsService } from '../../header/header-controls/header-controls.service';
-import { NshmpTemplateService } from '../../nshmp-template.service';
+import { HeaderControlsService } from '../header/header-controls/header-controls.service';
+import { NshmpTemplateService } from '../nshmp-template.service';
+import { ControlPanelService } from './control-panel.service';
 
 @Component({
   selector: 'nshmp-template-control-panel',
@@ -19,8 +20,12 @@ export class ControlPanelComponent implements OnInit, OnDestroy {
   screenChangeSubscription: Subscription;
 
   constructor(
-    private headerControlService: HeaderControlsService,
-    private nshmpService: NshmpTemplateService) { }
+      private headerControlService: HeaderControlsService,
+      private nshmpService: NshmpTemplateService,
+      private controlPanelService: ControlPanelService) {
+
+    this.controlPanelService.controlPanelInit();
+  }
 
   ngOnInit() {
     this.screenChangeSubscription = this.nshmpService.onSreenChange()
