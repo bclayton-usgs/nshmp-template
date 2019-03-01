@@ -1,30 +1,23 @@
 import { Injectable } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 /**
- * Get screen size changes.
+ * Get screen size changes for max-width: 63.99em, USWDS desktop breakpoint.
  */
 @Injectable({
   providedIn: 'root'
 })
 export class NshmpTemplateService {
 
-  private screenChange = new Subject<boolean>();
-
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe(['(max-width: 63.99em)', Breakpoints.HandsetPortrait])
-        .subscribe(state => {
-          this.screenChange.next(state.matches);
-        });
-  }
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   /**
    * Returns the screen change observable.
    * Observable returns true of max-width <= 63.99 else false.
    */
-  onSreenChange(): Observable<boolean> {
-    return this.screenChange.asObservable();
+  sceenChangeObserve(): Observable<BreakpointState> {
+    return this.breakpointObserver.observe(['(max-width: 63.99em)', Breakpoints.HandsetPortrait]);
   }
 
 }

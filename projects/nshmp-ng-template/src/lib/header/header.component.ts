@@ -15,14 +15,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   @Input() renderSearchBar: boolean;
 
-  renderHeaderControls = false;
+  @Input() renderHeaderControls = false;
 
   controlPanelSubscription: Subscription;
 
   constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
-    this.controlPanelSubscription = this.controlPanelService.onControlPanel()
+    this.controlPanelSubscription = this.controlPanelService.controlPanelObserve()
         .subscribe(renderHeaderControls => {
           this.renderHeaderControls = renderHeaderControls;
         });

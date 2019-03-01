@@ -26,8 +26,10 @@ export class HeaderControlsComponent implements OnInit, OnDestroy {
     private nshmpService: NshmpTemplateService) { }
 
   ngOnInit() {
-    this.screenChangeSubscription = this.nshmpService.onSreenChange()
-        .subscribe(isSmallScreen => this.onScreenChange(isSmallScreen));
+    this.screenChangeSubscription = this.nshmpService.sceenChangeObserve()
+        .subscribe(state => {
+          this.onScreenChange(state.matches);
+        });
   }
 
   ngOnDestroy() {

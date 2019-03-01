@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ControlPanelService } from '../control-panel/control-panel.service';
 import { Subscription } from 'rxjs';
+
+import { ControlPanelService } from '../control-panel/control-panel.service';
 
 @Component({
   selector: 'nshmp-template-main-page',
@@ -15,7 +16,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
-    this.controlPanelSubscription = this.controlPanelService.onControlPanel()
+    this.controlPanelSubscription = this.controlPanelService.controlPanelObserve()
         .subscribe(renderControlPanel => {
           this.renderControlPanel = renderControlPanel;
         });
