@@ -22,18 +22,16 @@ export class ControlPanelComponent implements OnInit, OnDestroy {
   constructor(
       private headerControlService: HeaderControlsService,
       private nshmpService: NshmpTemplateService,
-      private controlPanelService: ControlPanelService) {
-
-    this.controlPanelService.controlPanelInit();
-  }
+      private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
-    this.screenChangeSubscription = this.nshmpService.onSreenChange()
-        .subscribe(isSmallScreen => {
-          this.showContent = !isSmallScreen;
-          this.controlPanelSubscribe();
-        });
+    this.controlPanelService.controlPanelInit();
+    this.controlPanelSubscribe();
 
+    this.screenChangeSubscription = this.nshmpService.sceenChangeObserve()
+        .subscribe(state => {
+          this.showContent = !state.matches;
+        });
   }
 
   ngOnDestroy() {
@@ -43,13 +41,13 @@ export class ControlPanelComponent implements OnInit, OnDestroy {
   }
 
   controlPanelSubscribe() {
-    this.contentSubscription = this.headerControlService.onContentChange()
+    this.contentSubscription = this.headerControlService.contentObserve()
         .subscribe(headerControls => {
           this.showContent = headerControls.showContent;
           this.showControlPanel = headerControls.showControlPanel;
         });
 
-    this.controlPanelSubscription = this.headerControlService.onControlPanelChange()
+    this.controlPanelSubscription = this.headerControlService.controlPanelObserve()
         .subscribe(headerControls => {
           this.showContent = headerControls.showContent;
           this.showControlPanel = headerControls.showControlPanel;
