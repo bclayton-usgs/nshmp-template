@@ -1,23 +1,23 @@
-import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ControlPanelService {
 
-  private controlPanel = new BehaviorSubject<boolean>(null);
+  private controlPanelInitEmitter = new BehaviorSubject<boolean>(null);
 
   /**
-   * Fires the control panel subject.
+   * Returns the control panel observable
    */
-  controlPanelInit() {
-    this.controlPanel.next(true);
+  controlPanelObserve(): Observable<boolean> {
+    return this.controlPanelInitEmitter.asObservable();
   }
 
   /**
-   * Returns the on control panel observable
+   * Fires the control panel subject
    */
-  onControlPanel() {
-    return this.controlPanel.asObservable();
+  controlPanelInit(): void {
+    this.controlPanelInitEmitter.next(true);
   }
 
 }
