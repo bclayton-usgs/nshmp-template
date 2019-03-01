@@ -25,10 +25,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   spinnerSubscription: Subscription;
 
-  constructor(private spinnerService: SpinnerService) { }
+  constructor(private spinnerService: SpinnerService) {
+    this.spinner();
+  }
 
   ngOnInit() {
-    this.spinner();
   }
 
   ngOnDestroy() {
