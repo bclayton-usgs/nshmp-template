@@ -9,8 +9,8 @@ import { HeaderControls } from './header-controls.model';
 @Injectable({ providedIn: 'root' })
 export class HeaderControlsService {
 
-  private controlPanelChange = new Subject<HeaderControls>();
-  private contentChange = new Subject<HeaderControls>();
+  private controlPanelEmitter = new Subject<HeaderControls>();
+  private contentEmitter = new Subject<HeaderControls>();
 
   /**
    * Send header controls to content change.
@@ -18,7 +18,7 @@ export class HeaderControlsService {
    * @param headerControls The header controls
    */
   contentChangeNext(headerControls: HeaderControls): void {
-    this.contentChange.next(headerControls);
+    this.contentEmitter.next(headerControls);
   }
 
   /**
@@ -27,21 +27,21 @@ export class HeaderControlsService {
    * @param headerControls The header controls
    */
   controlPanelNext(headerControls: HeaderControls): void {
-    this.controlPanelChange.next(headerControls);
+    this.controlPanelEmitter.next(headerControls);
   }
 
   /**
    * Returns the on content change observable.
    */
-  onContentChange(): Observable<HeaderControls> {
-    return this.contentChange.asObservable();
+  contentObserve(): Observable<HeaderControls> {
+    return this.contentEmitter.asObservable();
   }
 
   /**
    * Returns the on control panel change observable.
    */
-  onControlPanelChange(): Observable<HeaderControls> {
-    return this.controlPanelChange.asObservable();
+  controlPanelObserve(): Observable<HeaderControls> {
+    return this.controlPanelEmitter.asObservable();
   }
 
 }
