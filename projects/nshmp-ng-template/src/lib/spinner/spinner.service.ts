@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Subscription, Observable } from 'rxjs';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { Overlay } from '@angular/cdk/overlay';
+import { Subscription } from 'rxjs';
+
+import { SpinnerDialogComponent } from './spinner-dialog/spinner-dialog.component';
 
 /**
  * Show and remove a spinner.
@@ -7,10 +11,11 @@ import { ReplaySubject, Subscription, Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class SpinnerService {
 
-  private showSpinner = new ReplaySubject<ShowSpinnerNextArgument>(1);
-  private removeSpinner = new ReplaySubject<void>(1);
+  private spinnerDialogRef: MatDialogRef<SpinnerDialogComponent>;
 
-  constructor() { }
+  constructor(
+      private spinnerDialog: MatDialog,
+      private overlay: Overlay) { }
 
   /**
    * Show an indeterminate progress spinner.
@@ -19,30 +24,25 @@ export class SpinnerService {
    * @param subscription The Subscription
    */
   show(text: string, subscription: Subscription): void {
-    setTimeout(() => {
-      this.showSpinner.next({text, subscription});
-    }, 0);
+    const data = {
+      text,
+      subscription,
+    };
+
+    this.spinnerDialogRef = this.spinnerDialog.open(
+        SpinnerDialogComponent, {
+          data,
+          scrollStrategy: this.overlay.scrollStrategies.reposition(),
+          hasBackdrop: true,
+          disableClose: true,
+        });
   }
 
   /**
    * Remove the spinner.
    */
   remove(): void {
-    this.removeSpinner.next();
-  }
-
-  /**
-   * Returns the on show observable.
-   */
-  _onShow(): Observable<ShowSpinnerNextArgument> {
-    return this.showSpinner.asObservable();
-  }
-
-  /**
-   * Returns the on remove observable
-   */
-  _onRemove(): Observable<void> {
-    return this.removeSpinner.asObservable();
+    this.spinnerDialogRef.close();
   }
 
 }
