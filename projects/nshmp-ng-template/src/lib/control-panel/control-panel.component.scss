@@ -16,7 +16,6 @@
   @include u-bg('base-lightest');
 
   @include at-media-max('desktop') {
-    position: relative;
     width: 100%;
   }
 }
