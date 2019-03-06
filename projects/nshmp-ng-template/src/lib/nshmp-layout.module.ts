@@ -19,7 +19,6 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerDialogComponent } from './spinner/spinner-dialog/spinner-dialog.component';
 import { HeaderControlsComponent } from './header/header-controls/header-controls.component';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
 
 @NgModule({
   imports: [
@@ -42,7 +41,6 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
     SearchBarComponent,
     SpinnerComponent,
     SpinnerDialogComponent,
-    ControlPanelComponent,
     HeaderControlsComponent
   ],
   exports: [
@@ -60,7 +58,6 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
     SearchBarComponent,
     SpinnerComponent,
     SpinnerDialogComponent,
-    ControlPanelComponent,
     HeaderControlsComponent,
     MaterialModule,
     RouterModule,
