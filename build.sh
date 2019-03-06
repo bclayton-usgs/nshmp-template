@@ -9,9 +9,6 @@ LIB=nshmp-ng-template
 # Library assets directory
 LIB_ASSETS_DIR=projects/${LIB}/src/assets
 
-# US wed design system assets directoy
-USWDS_ASSETS_DIR=node_modules/uswds/dist/img
-
 # Distribution directory
 DIST_DIR=dist/${LIB}
 
