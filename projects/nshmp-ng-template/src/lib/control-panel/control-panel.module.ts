@@ -16,4 +16,4 @@ import { MatSidenavModule } from '@angular/material';
     ControlPanelComponent
   ]
 })
-export class NshmpTemplateControlPanelModule { }
+export class NshmpControlPanelModule { }
