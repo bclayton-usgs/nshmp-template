@@ -15,4 +15,5 @@ export * from './lib/nshmp-template.component';
 
 /* Modules */
 export * from './lib/nshmp-template.module';
+export * from './lib/control-panel/control-panel.module';
 export * from './lib/material.module';

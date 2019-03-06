@@ -8,7 +8,6 @@ import {
   MatMenuModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
-  MatSidenavModule,
   MatButtonToggleModule } from '@angular/material';
 
 import 'hammerjs';
@@ -23,7 +22,6 @@ import 'uswds';
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MatSidenavModule,
     MatButtonToggleModule
   ]
 })
