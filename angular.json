@@ -24,10 +24,16 @@
                 "glob": "**/*",
                 "input": "projects/nshmp-ng-template/src/assets",
                 "output": "./assets/"
-              }, {
+              },
+              {
                 "glob": "**/*",
                 "input": "node_modules/uswds/dist/img",
-                "output": "./assets/uswds"
+                "output": "~uswds/dist/img"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/uswds/dist/fonts",
+                "output": "~uswds/dist/fonts"
               }
             ],
             "styles": [
