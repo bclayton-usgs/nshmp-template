@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { NshmpLayoutModule } from './nshmp-layout.module';
 import { NshmpTemplateComponent } from './nshmp-template.component';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +12,6 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
     BrowserAnimationsModule,
     NshmpLayoutModule
   ],
-  exports: [NshmpTemplateComponent, ControlPanelComponent],
+  exports: [NshmpTemplateComponent],
 })
 export class NshmpTemplateModule { }
