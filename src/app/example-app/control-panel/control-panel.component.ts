@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ControlPanelService } from './control-panel.service';
 
 @Component({
   selector: 'app-control-panel',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlPanelComponent implements OnInit {
 
-  constructor() { }
+  @Input() isProductionMode = true;
+
+  constructor(private controlPanelService: ControlPanelService) { }
 
   ngOnInit() {
+  }
+
+  onToggle(isProductionMode: boolean): void {
+    this.isProductionMode = isProductionMode;
+    this.controlPanelService.modeToggleNext(isProductionMode);
   }
 
 }
