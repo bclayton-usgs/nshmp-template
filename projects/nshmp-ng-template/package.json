@@ -1,7 +1,7 @@
 {
   "name": "@nshmp/nshmp-ng-template",
   "schematics": "../nshmp-template-schematics/src/collection.json",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
