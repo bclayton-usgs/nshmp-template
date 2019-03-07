@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { transition, trigger, animate, style } from '@angular/animations';
+import { transition, trigger, animate, style, state } from '@angular/animations';
 
 import { HeaderControlsService } from '../header/header-controls/header-controls.service';
 import { NshmpTemplateService } from '../nshmp-template.service';
@@ -12,14 +12,16 @@ import { ControlPanelService } from './control-panel.service';
   styleUrls: ['./control-panel.component.scss'],
   animations: [
     trigger('openClose', [
-      transition(':leave', [
-        animate('0.25s'),
-        style({opacity: 0})
-      ]),
-      transition(':enter', [
-        style({opacity: 0.0}),
-        animate('0.25s'),
-        style({opacity: 1.0})
+      state('show-content', style({
+        opacity: 1
+      })),
+      state('hide-content', style({
+        visibility: 'hidden',
+        position: 'absolute',
+        opacity: 0
+      })),
+      transition('show-content <=> hide-content', [
+        animate('0.35s'),
       ])
     ])
   ]
