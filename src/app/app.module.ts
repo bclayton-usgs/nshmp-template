@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {
   MatFormFieldModule,
-  MatInputModule } from '@angular/material';
+  MatInputModule,
+  MatButtonToggleModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NshmpTemplateModule, NshmpControlPanelModule } from 'projects/nshmp-ng-template/src/public_api';
@@ -28,6 +29,7 @@ const routes: Routes = [
     NshmpTemplateModule,
     NshmpControlPanelModule,
     MatFormFieldModule,
+    MatButtonToggleModule,
     MatInputModule,
     RouterModule.forRoot(routes)
   ],

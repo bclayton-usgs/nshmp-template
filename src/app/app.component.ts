@@ -4,6 +4,7 @@ import { Subscription, interval } from 'rxjs';
 import {
   Navigation,
   SpinnerService } from 'projects/nshmp-ng-template/src/public_api';
+import { ControlPanelService } from './example-app/control-panel/control-panel.service';
 
 @Component({
   selector: 'app-root',
@@ -25,11 +26,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
   spinnerSubscription: Subscription;
 
-  constructor(private spinnerService: SpinnerService) {
+  isProductionMode = true;
+
+  constructor(
+      private spinnerService: SpinnerService,
+      private controlPanelService: ControlPanelService) {
     this.spinner();
   }
 
   ngOnInit() {
+    this.controlPanelService.modeToggleObserve().subscribe(isProductionMode => {
+      this.isProductionMode = isProductionMode;
+    });
   }
 
   ngOnDestroy() {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 /**
@@ -10,7 +10,26 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 })
 export class NshmpTemplateService {
 
+  private productionModeEmitter = new BehaviorSubject<boolean>(null);
+
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  /**
+   * Returns the production mode observable.
+   * Whether the template is is production mode.
+   */
+  productionModeObserve(): Observable<boolean> {
+    return this.productionModeEmitter.asObservable();
+  }
+
+  /**
+   * Whether the template is in production mode.
+   *
+   * @param isProductionMode Whether template is in production mode
+   */
+  productionModeNext(isProductionMode: boolean): void {
+    this.productionModeEmitter.next(isProductionMode);
+  }
 
   /**
    * Returns the screen change observable.

@@ -1,5 +1,22 @@
 @import '../../../scss/uswds-functions';
+@import '../../../scss/mixins';
 
 .mat-button-toggle-checked {
   @include u-bg('base-light');
+}
+
+.mat-button-toggle {
+  @include at-media-max('desktop') {
+    margin: -8px 0;
+  }
+}
+
+.button-toggle-dev-mode {
+  margin: -8px 0;
+}
+
+mat-icon {
+  @include at-media-max('desktop') {
+    @include mat-icon-size(18px);
+  }
 }
