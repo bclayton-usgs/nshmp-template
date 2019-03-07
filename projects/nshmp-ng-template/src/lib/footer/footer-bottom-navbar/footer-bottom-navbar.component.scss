@@ -2,11 +2,15 @@
 
 a {
   color: white;
-  font-size: 14px;
+  font-size: 11px;
+
+  @include at-media-max('desktop') {
+    padding: 1em 0;
+  }
 }
 
 .social-links {
-  @include at-media-max('desktop') {
+  @include at-media-max('tablet-lg') {
     float: initial;
   }
 }
@@ -14,3 +18,16 @@ a {
 li {
   border: none;
 }
+
+ul {
+  text-align: center;
+}
+
+.navbar-border {
+  width: 100%;
+
+  @include at-media-max('mobile-lg') {
+    border-width: 0;
+  }
+}
+
