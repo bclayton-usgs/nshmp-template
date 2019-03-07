@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { FooterLink } from '../footer-link.model';
 import { FooterSocialLink } from '../footer-social-link.model';
@@ -8,7 +10,11 @@ import { FooterSocialLink } from '../footer-social-link.model';
   templateUrl: './footer-bottom-navbar.component.html',
   styleUrls: ['./footer-bottom-navbar.component.scss']
 })
-export class FooterBottomNavbarComponent implements OnInit {
+export class FooterBottomNavbarComponent implements OnInit, OnDestroy {
+
+  smallScreen: boolean;
+
+  screenChangeSubscription: Subscription;
 
   governmentLinks: FooterLink[] = [
     {
@@ -70,9 +76,17 @@ export class FooterBottomNavbarComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
+    this.screenChangeSubscription = this.breakpointObserver.observe('(max-width: 54.99em)')
+        .subscribe(state => {
+          this.smallScreen = state.matches;
+        });
+  }
+
+  ngOnDestroy() {
+    this.screenChangeSubscription.unsubscribe();
   }
 
 }

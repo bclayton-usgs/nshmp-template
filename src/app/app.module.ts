@@ -5,7 +5,7 @@ import {
   MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NshmpTemplateModule, NshmpTemplateControlPanelModule } from 'projects/nshmp-ng-template/src/public_api';
+import { NshmpTemplateModule, NshmpControlPanelModule } from 'projects/nshmp-ng-template/src/public_api';
 import { ControlPanelComponent } from './example-app/control-panel/control-panel.component';
 import { ExampleAppComponent } from './example-app/example-app.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -26,7 +26,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     NshmpTemplateModule,
-    NshmpTemplateControlPanelModule,
+    NshmpControlPanelModule,
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot(routes)

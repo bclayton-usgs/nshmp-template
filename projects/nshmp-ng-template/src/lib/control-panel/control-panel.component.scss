@@ -25,3 +25,8 @@
   @include u-bg('white');
 }
 
+@include at-media-max('desktop') {
+  .control-panel-visible {
+    position: relative;
+  }
+}
