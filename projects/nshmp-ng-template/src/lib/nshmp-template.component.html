@@ -1,5 +1,5 @@
 <!-- US web design government banner -->
-<nshmp-template-gov-banner [renderGovBanner]="renderGovBanner">
+<nshmp-template-gov-banner *ngIf="isProductionMode ? renderGovBanner : false">
 </nshmp-template-gov-banner>
 
 <!-- Header -->
@@ -16,5 +16,5 @@
 </nshmp-template-spinner>
 
 <!-- Footer -->
-<nshmp-template-footer>
+<nshmp-template-footer *ngIf="isProductionMode">
 </nshmp-template-footer>
