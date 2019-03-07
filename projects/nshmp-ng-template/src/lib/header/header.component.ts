@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ControlPanelService } from '../control-panel/control-panel.service';
+import { NshmpTemplateService } from '../nshmp-template.service';
 
 @Component({
   selector: 'nshmp-template-header',
@@ -15,21 +16,35 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   @Input() renderSearchBar: boolean;
 
+  /** Whether to render header controls */
   @Input() renderHeaderControls = false;
 
-  controlPanelSubscription: Subscription;
+  /**
+   * Whether the template should be in production mode
+   * Default: true
+   */
+  isProductionMode: boolean;
 
-  constructor(private controlPanelService: ControlPanelService) { }
+  controlPanelSubscription: Subscription;
+  productionModeSubscription: Subscription;
+
+  constructor(
+      private controlPanelService: ControlPanelService,
+      private nshmpService: NshmpTemplateService) { }
 
   ngOnInit() {
     this.controlPanelSubscription = this.controlPanelService.controlPanelObserve()
         .subscribe(renderHeaderControls => {
           this.renderHeaderControls = renderHeaderControls;
         });
+
+    this.productionModeSubscription = this.nshmpService.productionModeObserve()
+          .subscribe(isProductionMode => this.isProductionMode = isProductionMode);
   }
 
   ngOnDestroy() {
     this.controlPanelSubscription.unsubscribe();
+    this.productionModeSubscription.unsubscribe();
   }
 
 }

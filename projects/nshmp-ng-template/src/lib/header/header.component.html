@@ -3,7 +3,9 @@
 </nshmp-template-gtm-header>
 
 <!-- Header -->
-<header class="usa-header usa-header-basic">
+<header
+    class="usa-header usa-header-basic"
+    [ngClass]="{'header-dev-mode': !isProductionMode}">
   <div class="grid-row">
 
     <!-- USGS logo -->
@@ -19,7 +21,7 @@
     </div>
 
     <!-- USGS site wide search bar -->
-    <ng-container *ngIf="renderSearchBar">
+    <ng-container *ngIf="isProductionMode ? renderSearchBar : false">
       <nshmp-template-search-bar
           class="search-bar grid-col-12 mobile-lg:grid-col">
       </nshmp-template-search-bar>

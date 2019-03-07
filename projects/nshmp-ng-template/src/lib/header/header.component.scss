@@ -1,9 +1,9 @@
 @import '../../scss/uswds-functions';
 
-$navbar-small: 3em;
+$navbar-small: 2.5em;
 
 $logo-margin-large: get-uswds-value(margin, 2);
-$logo-margin-small: get-uswds-value(margin, 1);
+$logo-margin-small: get-uswds-value(margin, '05');
 
 $logo-large: get-uswds-value(height, 8);
 $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
@@ -34,5 +34,12 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
 .search-bar {
   @include at-media-max('mobile-lg') {
     display: none;
+  }
+}
+
+.header-dev-mode {
+  .usgs-logo > img {
+    height: $logo-small;
+    margin: $logo-margin-small;
   }
 }
