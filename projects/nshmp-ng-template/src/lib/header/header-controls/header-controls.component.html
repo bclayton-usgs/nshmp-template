@@ -9,8 +9,9 @@
       (change)="onControlPanelClick($event)"
       [checked]="showControlPanel"
       matTooltip="{{ !showControlPanel ? 'Show' : 'Hide' }} Control Panel"
-      aria-label="Toggle control panel appearance">
-    <mat-icon>format_list_bulleted</mat-icon>
+      aria-label="Toggle control panel appearance"
+      [ngClass]="{'button-toggle-dev-mode': !isProductionMode}">
+    <mat-icon [ngClass]="{'mat-icon-18': !isProductionMode}">format_list_bulleted</mat-icon>
   </mat-button-toggle>
 
   <!-- Content toggle -->
@@ -19,8 +20,9 @@
       (change)="onContentClick($event)"
       [checked]="showContent"
       matTooltip="{{ !showContent ? 'Show' : 'Hide' }} Content"
-      aria-label="Toggle content appearance">
-    <mat-icon>scatter_plot</mat-icon>
+      aria-label="Toggle content appearance"
+      [ngClass]="{'button-toggle-dev-mode': !isProductionMode}">
+    <mat-icon [ngClass]="{'mat-icon-18': !isProductionMode}">scatter_plot</mat-icon>
   </mat-button-toggle>
 
 </mat-button-toggle-group>

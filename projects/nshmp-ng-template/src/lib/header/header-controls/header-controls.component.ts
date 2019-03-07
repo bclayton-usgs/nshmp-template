@@ -18,8 +18,10 @@ export class HeaderControlsComponent implements OnInit, OnDestroy {
   showContent = true;
 
   isSmallScreen: boolean;
+  isProductionMode: boolean;
 
   screenChangeSubscription: Subscription;
+  productionModeSubscription: Subscription;
 
   constructor(
     private headerControlsService: HeaderControlsService,
@@ -30,10 +32,17 @@ export class HeaderControlsComponent implements OnInit, OnDestroy {
         .subscribe(state => {
           this.onScreenChange(state.matches);
         });
+
+    this.productionModeSubscription = this.nshmpService.productionModeObserve()
+          .subscribe(isProductionMode => {
+            this.isProductionMode = isProductionMode;
+            console.log(this.isProductionMode);
+          });
   }
 
   ngOnDestroy() {
     this.screenChangeSubscription.unsubscribe();
+    this.productionModeSubscription.unsubscribe();
   }
 
   /**
