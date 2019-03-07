@@ -13,10 +13,10 @@
   <!-- Content -->
   <mat-sidenav-content
       class="content"
-      *ngIf="showContent"
-      [@openClose]
       [ngClass]="{'main-content-visible': showContent}">
-    <ng-content select="[mainContent]"></ng-content>
+    <div [@openClose]="showContent ? 'show-content' : 'hide-content'">
+      <ng-content select="[mainContent]"></ng-content>
+    </div>
   </mat-sidenav-content>
 
 </mat-sidenav-container>
