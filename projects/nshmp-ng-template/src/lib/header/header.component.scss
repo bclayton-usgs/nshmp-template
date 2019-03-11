@@ -12,10 +12,6 @@ $logo-small: calc(#{$navbar-small} - (#{$logo-margin-small} * 2));
   background-color: color('primary-darker');
 }
 
-* :focus {
-  outline: 0;
-}
-
 .grid-row {
   align-items: center;
 }

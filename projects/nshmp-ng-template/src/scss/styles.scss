@@ -18,6 +18,10 @@ html {
   position: relative;
 }
 
+.usa-focus, *:focus {
+  @include focus-outline(0);
+}
+
 *,
 *:before,
 *:after {
