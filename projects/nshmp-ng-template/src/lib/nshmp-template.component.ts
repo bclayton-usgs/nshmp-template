@@ -34,7 +34,6 @@ export class NshmpTemplateComponent implements OnInit {
     this.nshmpService.productionModeNext(isProductionMode);
   }
 
-
   /** Navigation list for the header dropdown menu */
   @Input()
   set navigationList(navigationList: Navigation[]) {
@@ -44,6 +43,7 @@ export class NshmpTemplateComponent implements OnInit {
   constructor(
       private navigationService: NavigationService,
       private nshmpService: NshmpTemplateService) {
+    this.productionMode = this.isProductionMode;
   }
 
   ngOnInit() {
