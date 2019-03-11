@@ -36,7 +36,6 @@ export class HeaderControlsComponent implements OnInit, OnDestroy {
     this.productionModeSubscription = this.nshmpService.productionModeObserve()
           .subscribe(isProductionMode => {
             this.isProductionMode = isProductionMode;
-            console.log(this.isProductionMode);
           });
   }
 

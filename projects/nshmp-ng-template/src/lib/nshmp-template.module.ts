@@ -1,7 +1,7 @@
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { NshmpLayoutModule } from './nshmp-layout.module';
+import { NshmpLayoutModule } from './layout/nshmp-layout.module';
 import { NshmpTemplateComponent } from './nshmp-template.component';
 
 @NgModule({
@@ -12,6 +12,6 @@ import { NshmpTemplateComponent } from './nshmp-template.component';
     BrowserAnimationsModule,
     NshmpLayoutModule
   ],
-  exports: [NshmpTemplateComponent],
+  exports: [NshmpTemplateComponent]
 })
 export class NshmpTemplateModule { }
