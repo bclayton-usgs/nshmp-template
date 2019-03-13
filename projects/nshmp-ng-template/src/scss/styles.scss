@@ -18,53 +18,27 @@ html {
   position: relative;
 }
 
-.usa-focus, *:focus {
-  @include focus-outline(0);
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-p {
-  @include u-measure('none');
-}
-
-nshmp-template {
-  min-height: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: stretch;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
+/* Material icon size 18px */
 .material-icons.mat-icon-18 {
   @include mat-icon-size(18px);
 }
 
+/* Material icon size 24px */
 .material-icons.mat-icon-24 {
   @include mat-icon-size(24px);
 }
 
+/* Material icon size 28px */
 .material-icons.mat-icon-28 {
   @include mat-icon-size(28px);
 }
 
+/* Material icon size 32px */
 .material-icons.mat-icon-32 {
   @include mat-icon-size(32px);
 }
 
+/* Material icon size 36px */
 .material-icons.mat-icon-36 {
   @include mat-icon-size(36px);
 }
@@ -115,4 +89,39 @@ nshmp-template {
 /* Angular material button toggle large size */
 .button-toggle-lg .mat-button-toggle-label-content {
   padding: 2px 16px !important;
+}
+
+.usa-focus, *:focus {
+  @include focus-outline(0);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+p {
+  @include u-measure('none');
+}
+
+nshmp-template {
+  min-height: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.control-panel .mat-drawer-inner-container {
+  padding: 1em;
 }
