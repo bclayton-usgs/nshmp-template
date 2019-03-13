@@ -1,0 +1,10 @@
+<!-- Slide toggle -->
+<ng-container [formGroup]="formGroup">
+  <mat-slide-toggle
+      color="primary"
+      [formControlName]="form.formControlName"
+      [name]="form.formControlName"
+      [ngClass]="form.formClass">
+    {{ form.label }}
+  </mat-slide-toggle>
+</ng-container>
