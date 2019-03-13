@@ -1,9 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ControlPanelService } from './control-panel.service';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatButtonToggleChange } from '@angular/material';
+import {
+  FormField,
+  FormButtonToggle,
+  FormInput,
+  FormSelect,
+  FormSlider,
+  FormCheckbox} from 'projects/nshmp-ng-template/src/public_api';
 
-import { FormButtonToggle, FormInput, FormSelect, FormSlider } from 'projects/nshmp-ng-template/src/public_api';
-import { FormField } from 'projects/nshmp-ng-template/src/lib/form-field/form-field.model';
+import { ControlPanelService } from './control-panel.service';
 
 @Component({
   selector: 'app-control-panel',
@@ -12,20 +18,27 @@ import { FormField } from 'projects/nshmp-ng-template/src/lib/form-field/form-fi
 })
 export class ControlPanelComponent implements OnInit {
 
-  @Input() isProductionMode = true;
-
   buttonToggle: FormButtonToggle = {
+    change: this.onToggle.bind(this),
     buttons: [
-      {label: 'Button 1', value: 'btn1'},
-      {label: 'Button 2', value: 'btn2'}
+      {
+        label: 'Production mode',
+        checked: true,
+        value: true
+      },
+      {
+        label: 'Development mode',
+        checked: false,
+        value: false
+      }
     ],
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-1 grid-col-12',
     formControlName: 'buttonToggle',
     formType: 'button-toggle',
-    label: 'Button Toggles'
+    label: 'Production Mode Toggle'
   };
 
-  checkbox: FormField = {
+  checkbox: FormCheckbox = {
     formClass: 'margin-y-2 grid-col-12',
     formControlName: 'checkbox',
     formType: 'checkbox',
@@ -34,7 +47,7 @@ export class ControlPanelComponent implements OnInit {
 
   input: FormInput = {
     formControlName: 'input',
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-1 grid-col-12',
     formType: 'input',
     label: 'Input',
     type: 'number'
@@ -42,7 +55,7 @@ export class ControlPanelComponent implements OnInit {
 
   select: FormSelect = {
     formControlName: 'select',
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-1 grid-col-12',
     formType: 'select',
     label: 'Select Menu',
     options: [
@@ -53,7 +66,7 @@ export class ControlPanelComponent implements OnInit {
 
   selectOptGroup: FormSelect = {
     formControlName: 'select',
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-1 grid-col-12',
     formType: 'select',
     label: 'Select Menu with Groups',
     optGroup: [
@@ -76,7 +89,7 @@ export class ControlPanelComponent implements OnInit {
 
   slideToggle: FormField = {
     formControlName: 'slideToggle',
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-1 grid-col-12',
     formType: 'toggle',
     label: 'Slide Toggle'
   };
@@ -101,6 +114,8 @@ export class ControlPanelComponent implements OnInit {
 
   formGroup: FormGroup = this.formBuilder.group({
     buttonToggle: [],
+    dev: [],
+    prod: [],
     checkbox: [],
     input: [],
     select: [],
@@ -116,9 +131,8 @@ export class ControlPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  onToggle(isProductionMode: boolean): void {
-    this.isProductionMode = isProductionMode;
-    this.controlPanelService.modeToggleNext(isProductionMode);
+  onToggle(change: MatButtonToggleChange): void {
+    this.controlPanelService.modeToggleNext(change.value);
   }
 
 }

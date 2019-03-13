@@ -2,25 +2,3 @@
     [formFields]="formFields"
     [formGroup]="formGroup">
 </nshmp-template-form-fields>
-
-<mat-button-toggle-group
-    [multiple]="false"
-    aria-label="Toggle controls for enviroment mode"
-    class="margin-y-3">
-
-  <!-- Production mode -->
-  <mat-button-toggle
-      (change)="onToggle(true)"
-      [checked]="isProductionMode">
-    Production mode
-  </mat-button-toggle>
-
-  <!-- Development Mode -->
-  <mat-button-toggle
-      (change)="onToggle(false)"
-      [checked]="!isProductionMode">
-    Development mode
-  </mat-button-toggle>
-
-</mat-button-toggle-group>
-
