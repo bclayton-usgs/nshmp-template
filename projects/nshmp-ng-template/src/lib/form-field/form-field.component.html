@@ -1,0 +1,49 @@
+<!-- Forms -->
+<ng-container
+    *ngFor="let form of formFields"
+    [ngSwitch]="form.formType"
+    [formGroup]="formGroup">
+
+  <!-- Button toggle  -->
+  <nshmp-template-form-button-toggle
+      *ngSwitchCase="'button-toggle'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-button-toggle>
+
+  <!-- Checkbox -->
+  <nshmp-template-form-checkbox
+      *ngSwitchCase="'checkbox'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-checkbox>
+
+  <!-- Input -->
+  <nshmp-template-form-input
+      *ngSwitchCase="'input'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-input>
+
+  <!-- Select -->
+  <nshmp-template-form-select
+      *ngSwitchCase="'select'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-select>
+
+  <!-- Slide toggle -->
+  <nshmp-template-form-toggle
+      *ngSwitchCase="'toggle'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-toggle>
+
+  <!-- Slider -->
+  <nshmp-template-form-slider
+      *ngSwitchCase="'slider'"
+      [form]="form"
+      [formGroup]="formGroup">
+  </nshmp-template-form-slider>
+
+</ng-container>
