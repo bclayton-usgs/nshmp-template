@@ -1,17 +1,7 @@
-<mat-form-field
-    appearance="outline"
-    class="grid-col-12 desktop:grid-col-8">
-  <mat-label>Enter text</mat-label>
-  <input matInput type="text" placeholder="Some text">
-</mat-form-field>
-
-<mat-form-field
-    appearance="outline"
-    class="grid-col-12 desktop:grid-col-8">
-  <mat-label>Enter a number</mat-label>
-  <input matInput type="number" placeholder="5">
-  <mat-hint>Some hint</mat-hint>
-</mat-form-field>
+<nshmp-template-form-fields
+    [formFields]="formFields"
+    [formGroup]="formGroup">
+</nshmp-template-form-fields>
 
 <mat-button-toggle-group
     [multiple]="false"
