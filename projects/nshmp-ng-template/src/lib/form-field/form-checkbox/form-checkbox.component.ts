@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { FormField } from '../form-field.model';
+import { FormCheckbox } from './form-checkbox.model';
 
 @Component({
   selector: 'nshmp-template-form-checkbox',
@@ -10,7 +10,7 @@ import { FormField } from '../form-field.model';
 })
 export class FormCheckboxComponent implements OnInit {
 
-  @Input() form: FormField;
+  @Input() form: FormCheckbox;
 
   @Input() formGroup: FormGroup;
 

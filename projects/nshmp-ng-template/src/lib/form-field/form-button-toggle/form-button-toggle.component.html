@@ -10,7 +10,7 @@
         [formControlName]="form.formControlName"
         [multiple]="form.multiple"
         [name]="form.formControlName"
-        [ngClass]="{'margin-top-1': form.label.trim !== ''}">
+        [ngClass]="{'margin-top-1': form.label.trim.length !== 0}">
 
       <!-- Buttons -->
       <mat-button-toggle
