@@ -1,0 +1,12 @@
+<!-- Checkbox -->
+<ng-container [formGroup]="formGroup">
+  <div [ngClass]="form.formClass">
+    <mat-checkbox
+        color="primary"
+        [formControlName]="form.formControlName"
+        [name]="form.formControlName"
+        [ngClass]="form.checkboxClass">
+      {{ form.label }}
+    </mat-checkbox>
+  </div>
+</ng-container>

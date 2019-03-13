@@ -1,0 +1,18 @@
+<!-- Slider -->
+<ng-container [formGroup]="formGroup">
+  <div [ngClass]="form.formClass">
+    <mat-label>{{ form.label }}</mat-label>
+    <br *ngIf="form.labelPosition && form.labelPosition === 'left' ? false : true">
+    <mat-slider
+        color="primary"
+        class="margin-top-0"
+        [formControlName]="form.formControlName"
+        [min]="form.min"
+        [max]="form.max"
+        [ngClass]="form.sliderClass"
+        [step]="form.step"
+        [thumbLabel]="form.thumbLabel"
+        [value]="form.valueSync ? form.valueSync.value : null">
+    </mat-slider>
+  </div>
+</ng-container>

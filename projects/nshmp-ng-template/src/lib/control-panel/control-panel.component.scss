@@ -12,7 +12,6 @@
 .control-panel {
   height: 100%;
   width: 400px;
-  padding: 1em;
   @include u-bg('base-lightest');
 
   @include at-media-max('desktop') {

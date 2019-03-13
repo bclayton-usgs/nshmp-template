@@ -1,0 +1,61 @@
+<!-- Forms -->
+<ng-container
+    *ngFor="let form of formFields"
+    [ngSwitch]="form.formType"
+    [formGroup]="formGroup">
+
+  <!-- Button toggle  -->
+  <ng-container *ngSwitchCase="'button-toggle'">
+    <nshmp-template-form-button-toggle
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-button-toggle>
+  </ng-container>
+
+  <!-- Checkbox -->
+  <ng-container *ngSwitchCase="'checkbox'">
+    <nshmp-template-form-checkbox
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-checkbox>
+  </ng-container>
+
+  <!-- Input -->
+  <ng-container *ngSwitchCase="'input'">
+    <nshmp-template-form-input
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-input>
+  </ng-container>
+
+  <!-- Select -->
+  <ng-container *ngSwitchCase="'select'">
+    <nshmp-template-form-select
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-select>
+  </ng-container>
+
+  <!-- Slide toggle -->
+  <ng-container *ngSwitchCase="'toggle'">
+    <nshmp-template-form-toggle
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-toggle>
+  </ng-container>
+
+  <!-- Slider -->
+  <ng-container *ngSwitchCase="'slider'">
+    <nshmp-template-form-slider
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-slider>
+  </ng-container>
+
+</ng-container>

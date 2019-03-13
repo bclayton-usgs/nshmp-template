@@ -1,0 +1,80 @@
+<!-- Select -->
+<ng-container [formGroup]="formGroup">
+  <mat-form-field
+      appearance="outline"
+      color="primary"
+      class="form-field-md"
+      floatLabel="always"
+      [ngClass]="form.formClass">
+    <mat-label>{{ form.label }}</mat-label>
+
+    <!-- Angular Material select menu -->
+    <ng-container *ngIf="!form.isNativeSelect; else nativeSelectMenu">
+      <mat-select
+          [formControlName]="form.formControlName"
+          [multiple]="form.multiple">
+
+          <!-- Material opt group -->
+        <ng-container *ngIf="form.optGroup; else noOptGroupMaterial">
+          <mat-optgroup
+              *ngFor="let optGroup of form.optGroup"
+              [label]="optGroup.label">
+            <ng-container *ngTemplateOutlet="setMaterialOptions; context: optGroup"></ng-container>
+          </mat-optgroup>
+        </ng-container>
+
+        <!-- Material options -->
+        <ng-container
+            #noOptGroupMaterial
+            *ngTemplateOutlet="setMaterialOptions; context: form">
+        </ng-container>
+
+        <!-- Set material select options -->
+        <ng-template #setMaterialOptions let-options="options">
+          <mat-option
+              *ngFor="let option of options"
+              [value]="option.value">
+            {{ option.label }}
+          </mat-option>
+        </ng-template>
+
+      </mat-select>
+    </ng-container>
+
+    <!-- Native select menu -->
+    <ng-template #nativeSelectMenu>
+      <select
+          [formControlName]="form.formControlName"
+          matNativeControl
+          [multiple]="form.multiple"
+          [size]="form.size">
+
+          <!-- Native opt group -->
+        <ng-container *ngIf="form.optGroup; else noOptGroupNative">
+          <optgroup
+              *ngFor="let optGroup of form.optGroup"
+              [label]="optGroup.label">
+            <ng-template *ngTemplateOutlet="setNativeOptions; context: optGroup"></ng-template>
+          </optgroup>
+        </ng-container>
+
+        <!-- Native options -->
+        <ng-container
+            #noOptGroupNative
+            *ngTemplateOutlet="setNativeOptions; context: form">
+        </ng-container>
+
+        <!-- Set native select options -->
+        <ng-template #setNativeOptions let-options="options">
+          <option
+              *ngFor="let option of options"
+              [value]="option.value">
+            {{ option.label }}
+          </option>
+        </ng-template>
+
+      </select>
+    </ng-template>
+
+  </mat-form-field>
+</ng-container>

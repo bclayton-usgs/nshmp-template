@@ -1,0 +1,22 @@
+<!-- Input field -->
+<ng-container [formGroup]="formGroup">
+  <mat-form-field
+      appearance="outline"
+      color="primary"
+      class="form-field-md"
+      floatLabel="always"
+      [ngClass]="form.formClass">
+    <mat-label>{{ form.label }}</mat-label>
+    <mat-hint *ngIf="form.formFieldHint">{{ form.formFieldHint }}</mat-hint>
+    <mat-error>{{ form.formFieldError }}</mat-error>
+    <input
+        [formControlName]="form.formControlName"
+        matInput
+        [matTooltip]="form.tooltip"
+        matTooltipPosition="form.tooltipPosition"
+        [name]="form.formControlName"
+        [step]="form.step"
+        [type]="form.type"
+        [value]="form.valueSync ? form.valueSync.value : null">
+  </mat-form-field>
+</ng-container>
