@@ -7,14 +7,17 @@ export interface FormField {
   /** Any class to apply */
   formClass?: string;
 
+  /** Form control name */
+  formControlName: string;
+
   /** The form type */
   formType: FormType;
 
   /** Label for form field */
   label: string;
 
-  /** Form control name */
-  formControlName: string;
+  /** Whether to show the form field */
+  showFormField?: boolean;
 
 }
 
