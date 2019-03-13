@@ -5,45 +5,57 @@
     [formGroup]="formGroup">
 
   <!-- Button toggle  -->
-  <nshmp-template-form-button-toggle
-      *ngSwitchCase="'button-toggle'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-button-toggle>
+  <ng-container *ngSwitchCase="'button-toggle'">
+    <nshmp-template-form-button-toggle
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-button-toggle>
+  </ng-container>
 
   <!-- Checkbox -->
-  <nshmp-template-form-checkbox
-      *ngSwitchCase="'checkbox'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-checkbox>
+  <ng-container *ngSwitchCase="'checkbox'">
+    <nshmp-template-form-checkbox
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-checkbox>
+  </ng-container>
 
   <!-- Input -->
-  <nshmp-template-form-input
-      *ngSwitchCase="'input'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-input>
+  <ng-container *ngSwitchCase="'input'">
+    <nshmp-template-form-input
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-input>
+  </ng-container>
 
   <!-- Select -->
-  <nshmp-template-form-select
-      *ngSwitchCase="'select'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-select>
+  <ng-container *ngSwitchCase="'select'">
+    <nshmp-template-form-select
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-select>
+  </ng-container>
 
   <!-- Slide toggle -->
-  <nshmp-template-form-toggle
-      *ngSwitchCase="'toggle'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-toggle>
+  <ng-container *ngSwitchCase="'toggle'">
+    <nshmp-template-form-toggle
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-toggle>
+  </ng-container>
 
   <!-- Slider -->
-  <nshmp-template-form-slider
-      *ngSwitchCase="'slider'"
-      [form]="form"
-      [formGroup]="formGroup">
-  </nshmp-template-form-slider>
+  <ng-container *ngSwitchCase="'slider'">
+    <nshmp-template-form-slider
+        *ngIf="form.showFormField === undefined ? true : form.showFormField"
+        [form]="form"
+        [formGroup]="formGroup">
+    </nshmp-template-form-slider>
+  </ng-container>
 
 </ng-container>
