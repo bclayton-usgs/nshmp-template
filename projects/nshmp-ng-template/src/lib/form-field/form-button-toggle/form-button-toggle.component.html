@@ -1,0 +1,17 @@
+<!-- Button toggles -->
+<ng-container [formGroup]="formGroup">
+  <div [ngClass]="form.formClass">
+    <mat-button-toggle-group
+        [formControlName]="form.formControlName"
+        [multiple]="form.multiple"
+        [name]="form.formControlName">
+      <mat-button-toggle
+          *ngFor="let btn of form.buttons"
+          class="button-toggle-sm"
+          [ngClass]="btn.buttonClass"
+          [value]="btn.value">
+        {{ btn.label }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</ng-container>
