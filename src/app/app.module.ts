@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import {
   MatFormFieldModule,
   MatInputModule,
   MatButtonToggleModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NshmpTemplateModule, NshmpControlPanelModule } from 'projects/nshmp-ng-template/src/public_api';
+import {
+  NshmpTemplateModule,
+  NshmpControlPanelModule,
+  FormFieldModule } from 'projects/nshmp-ng-template/src/public_api';
 import { ControlPanelComponent } from './example-app/control-panel/control-panel.component';
 import { ExampleAppComponent } from './example-app/example-app.component';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -31,6 +34,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatButtonToggleModule,
     MatInputModule,
+    FormFieldModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
