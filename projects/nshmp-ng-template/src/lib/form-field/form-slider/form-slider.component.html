@@ -1,0 +1,15 @@
+<!-- Slider -->
+<ng-container [formGroup]="formGroup">
+  <mat-label>{{ form.label }}</mat-label>
+  <mat-slider
+      color="primary"
+      class="margin-top-0"
+      [formControlName]="form.formControlName"
+      [min]="form.min"
+      [max]="form.max"
+      [ngClass]="form.formClass"
+      [step]="form.step"
+      [thumbLabel]="form.thumbLabel"
+      [value]="form.valueSync ? form.valueSync.value : null">
+  </mat-slider>
+</ng-container>
