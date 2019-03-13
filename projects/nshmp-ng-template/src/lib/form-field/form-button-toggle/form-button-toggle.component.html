@@ -1,17 +1,28 @@
 <!-- Button toggles -->
 <ng-container [formGroup]="formGroup">
   <div [ngClass]="form.formClass">
+    <mat-label>{{ form.label }}</mat-label>
+
+    <!-- Button group -->
     <mat-button-toggle-group
+        (change)="form.change($event)"
+        [class]="form.buttonGroupClass"
         [formControlName]="form.formControlName"
         [multiple]="form.multiple"
-        [name]="form.formControlName">
+        [name]="form.formControlName"
+        [ngClass]="{'margin-top-1': form.label.trim !== ''}">
+
+      <!-- Buttons -->
       <mat-button-toggle
           *ngFor="let btn of form.buttons"
+          [checked]="btn.checked"
           class="button-toggle-sm"
           [ngClass]="btn.buttonClass"
           [value]="btn.value">
         {{ btn.label }}
       </mat-button-toggle>
+
     </mat-button-toggle-group>
+
   </div>
 </ng-container>
