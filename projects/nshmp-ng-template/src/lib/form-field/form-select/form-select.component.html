@@ -24,10 +24,9 @@
         </ng-container>
 
         <!-- Material options -->
-        <ng-container
-            #noOptGroupMaterial
-            *ngTemplateOutlet="setMaterialOptions; context: form">
-        </ng-container>
+        <ng-template #noOptGroupMaterial>
+          <ng-container *ngTemplateOutlet="setMaterialOptions; context: form"></ng-container>
+        </ng-template>
 
         <!-- Set material select options -->
         <ng-template #setMaterialOptions let-options="options">
@@ -59,10 +58,9 @@
         </ng-container>
 
         <!-- Native options -->
-        <ng-container
-            #noOptGroupNative
-            *ngTemplateOutlet="setNativeOptions; context: form">
-        </ng-container>
+        <ng-template #noOptGroupNative>
+          <ng-container *ngTemplateOutlet="setNativeOptions; context: form"></ng-container>
+        </ng-template>
 
         <!-- Set native select options -->
         <ng-template #setNativeOptions let-options="options">
