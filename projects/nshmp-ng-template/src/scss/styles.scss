@@ -68,3 +68,51 @@ nshmp-template {
 .material-icons.mat-icon-36 {
   @include mat-icon-size(36px);
 }
+
+/* Angular material form field extra small size */
+.form-field-xs .mat-form-field-infix {
+  padding: 0.1em 0;
+}
+
+/* Angular material form field small size */
+.form-field-sm .mat-form-field-infix {
+  padding: 0.25em 0;
+}
+
+/* Angular material form field medium size */
+.form-field-md .mat-form-field-infix {
+  padding: 0.5em 0;
+}
+
+/* Angular material form field large size */
+.form-field-lg .mat-form-field-infix {
+  padding: 0.75em 0;
+}
+
+/* Angular material form field extra large size */
+.form-field-xl .mat-form-field-infix {
+  padding: 1em 0;
+}
+
+/* Angular material button toggle small size */
+.button-toggle-xs .mat-button-toggle-label-content {
+  line-height: 1 !important;
+  padding: 2px 4px !important;
+}
+
+/* Angular material button toggle small size */
+.button-toggle-sm .mat-button-toggle-label-content {
+  line-height: 2 !important;
+  padding: 2px 8px !important;
+}
+
+/* Angular material button toggle medium size */
+.button-toggle-md .mat-button-toggle-label-content {
+  line-height: 3 !important;
+  padding: 2px 12px !important;
+}
+
+/* Angular material button toggle large size */
+.button-toggle-lg .mat-button-toggle-label-content {
+  padding: 2px 16px !important;
+}
