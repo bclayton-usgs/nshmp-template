@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { FormField } from './form-field.model';
 
 @Component({
-  selector: 'nshmp-template-form-fields',
+  selector: 'nshmp-template-form-field',
   templateUrl: './form-field.component.html',
   styleUrls: ['./form-field.component.scss']
 })
