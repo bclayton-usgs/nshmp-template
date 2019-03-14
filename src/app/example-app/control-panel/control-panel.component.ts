@@ -89,14 +89,14 @@ export class ControlPanelComponent implements OnInit {
 
   slideToggle: FormField = {
     formControlName: 'slideToggle',
-    formClass: 'margin-y-1 grid-col-12',
+    formClass: 'margin-y-1 grid-col-6',
     formType: 'toggle',
     label: 'Slide Toggle'
   };
 
   slider: FormSlider = {
     formControlName: 'slider',
-    formClass: 'margin-y-2 grid-col-12',
+    formClass: 'margin-y-2 grid-col-6',
     formType: 'slider',
     label: 'Slider',
     thumbLabel: true

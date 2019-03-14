@@ -46,4 +46,4 @@ import { FormFieldComponent } from './form-field.component';
     FormFieldComponent
   ]
 })
-export class FormFieldModule { }
+export class NshmpFormFieldModule { }
