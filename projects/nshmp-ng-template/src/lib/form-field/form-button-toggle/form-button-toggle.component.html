@@ -5,7 +5,7 @@
 
     <!-- Button group -->
     <mat-button-toggle-group
-        (change)="form.change !== undefiend ? form.change($event) : {}"
+        (change)="form.change ? form.change($event) : {}"
         [class]="form.buttonGroupClass"
         [formControlName]="form.formControlName"
         [multiple]="form.multiple"
