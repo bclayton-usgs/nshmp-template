@@ -18,5 +18,7 @@
         [step]="form.step"
         [type]="form.type"
         [value]="form.valueSync ? form.valueSync.value : null">
+    <span matPrefix *ngIf="form.prefix">{{ form.prefix }}&nbsp;</span>
+    <span matSuffix *ngIf="form.suffix">{{ form.suffix }}</span>
   </mat-form-field>
 </ng-container>
