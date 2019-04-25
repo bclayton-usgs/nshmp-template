@@ -91,6 +91,12 @@ html {
   padding: 2px 16px !important;
 }
 
+/* Update input form prefix and suffix */
+.mat-form-field-appearance-outline .mat-form-field-prefix,
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+  top: initial !important;
+}
+
 .usa-focus, *:focus {
   @include focus-outline(0);
 }
