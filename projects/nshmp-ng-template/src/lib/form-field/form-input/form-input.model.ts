@@ -7,10 +7,12 @@ export interface FormInput extends FormField {
   formFieldHint?: string;
   max?: number;
   min?: number;
+  prefix?: string;
   tooltip?: string;
   tooltipPosition?: string;
   type: FormInputType;
   step?: number;
+  suffix?: string;
   valueSync?: AbstractControl;
 }
 
