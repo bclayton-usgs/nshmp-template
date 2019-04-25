@@ -50,7 +50,9 @@ export class ControlPanelComponent implements OnInit {
     formClass: 'margin-y-1 grid-col-12',
     formType: 'input',
     label: 'Input',
-    type: 'number'
+    prefix: '$',
+    type: 'number',
+    suffix: '.00'
   };
 
   select: FormSelect = {
