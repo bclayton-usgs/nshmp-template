@@ -1,3 +1,10 @@
+/*
+* Main Angular stylesheet with convenience classes
+*/
+
+
+/* ---- Imports ---- */
+
 /* Import material theme */
 @import './material-theme';
 
@@ -7,16 +14,8 @@
 /* Import USWDS theme */
 @import './uswds-theme';
 
-body {
-  margin: 0;
-  height: 100%;
-  position: relative;
-}
 
-html {
-  height: 100%;
-  position: relative;
-}
+/* ---- Angular Material Icon Sizing ---- */
 
 /* Material icon size 18px */
 .material-icons.mat-icon-18 {
@@ -43,6 +42,9 @@ html {
   @include mat-icon-size(36px);
 }
 
+
+/* ---- Angular Material Form Field Sizing ---- */
+
 /* Angular material form field extra small size */
 .form-field-xs .mat-form-field-infix {
   padding: 0.1em 0;
@@ -68,6 +70,9 @@ html {
   padding: 1em 0;
 }
 
+
+/* ---- Angular Material Button Toggle Sizing */
+
 /* Angular material button toggle small size */
 .button-toggle-xs .mat-button-toggle-label-content {
   line-height: 1 !important;
@@ -91,26 +96,24 @@ html {
   padding: 2px 16px !important;
 }
 
+
+/* ---- Misc Classes ---- */
+
+/* Cursor Pointer*/
+.pointer {
+  cursor: pointer;
+}
+
+
+/* ---- Template Styling ---- */
+
 /* Update input form prefix and suffix */
 .mat-form-field-appearance-outline .mat-form-field-prefix,
 .mat-form-field-appearance-outline .mat-form-field-suffix {
   top: initial !important;
 }
 
-.usa-focus, *:focus {
-  @include focus-outline(0);
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-p {
-  @include u-measure('none');
-}
-
+/* Main template style */
 nshmp-template {
   min-height: 100%;
   height: auto;
@@ -124,10 +127,37 @@ nshmp-template {
   align-items: stretch;
 }
 
-.pointer {
-  cursor: pointer;
+/* Update body */
+body {
+  margin: 0;
+  height: 100%;
+  position: relative;
 }
 
+/* Update html */
+html {
+  height: 100%;
+  position: relative;
+}
+
+/* Remove uswds default outline*/
+.usa-focus, *:focus {
+  outline: initial !important;
+}
+
+/* Update box sizing */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Remove uswds default paragraph behavior*/
+p {
+  @include u-measure('none');
+}
+
+/* Update control panel */
 .control-panel .mat-drawer-inner-container {
   padding: 1em;
 }
