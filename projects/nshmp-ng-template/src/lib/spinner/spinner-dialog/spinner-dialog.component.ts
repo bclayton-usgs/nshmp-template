@@ -18,7 +18,14 @@ export class SpinnerDialogComponent implements OnInit {
   }
 
   onCancel() {
-    this.data.subscription.unsubscribe();
+    if (this.data.subscription) {
+      this.data.subscription.unsubscribe();
+    }
+
+    if (this.data.callback) {
+      this.data.callback();
+    }
+
     this.spinnerDialogRef.close();
   }
 

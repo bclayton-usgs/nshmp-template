@@ -12,21 +12,33 @@ import { SpinnerDialogComponent } from './spinner-dialog/spinner-dialog.componen
 export class SpinnerService {
 
   private spinnerDialogRef: MatDialogRef<SpinnerDialogComponent>;
+  private data: ShowSpinnerNextArgument;
 
   constructor(
       private spinnerDialog: MatDialog,
       private overlay: Overlay) { }
 
   /**
+   * Update the spinner text.
+   *
+   * @param text The text to update
+   */
+  setText(text: string): void {
+    this.data.text = text;
+  }
+
+  /**
    * Show an indeterminate progress spinner.
    *
    * @param text The text to show under the spinner
-   * @param subscription The Subscription
+   * @param subscription The Subscription to cancel if cancel is pressed
+   * @param callback A callback to call if cancel is pressed
    */
-  show(text: string, subscription: Subscription): void {
+  show(text: string, subscription?: Subscription, callback?: Function): void {
     const data = {
       text,
       subscription,
+      callback
     };
 
     this.spinnerDialogRef = this.spinnerDialog.open(
@@ -36,6 +48,8 @@ export class SpinnerService {
           hasBackdrop: true,
           disableClose: true,
         });
+
+    this.data = data;
   }
 
   /**
@@ -50,4 +64,5 @@ export class SpinnerService {
 export interface ShowSpinnerNextArgument {
   subscription: Subscription;
   text: string;
+  callback: Function;
 }
