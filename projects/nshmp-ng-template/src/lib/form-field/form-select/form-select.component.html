@@ -11,6 +11,7 @@
     <!-- Angular Material select menu -->
     <ng-container *ngIf="!form.isNativeSelect; else nativeSelectMenu">
       <mat-select
+          [disabled]="form.disabled"
           [formControlName]="form.formControlName"
           [multiple]="form.multiple">
 
@@ -43,6 +44,7 @@
     <!-- Native select menu -->
     <ng-template #nativeSelectMenu>
       <select
+          [disabled]="form.disabled"
           [formControlName]="form.formControlName"
           matNativeControl
           [multiple]="form.multiple"
