@@ -5,7 +5,7 @@
 export interface FormField {
 
   /** Whether to disable form field */
-  disable?: boolean;
+  disabled?: boolean;
 
   /** Any class to apply */
   formClass?: string;
