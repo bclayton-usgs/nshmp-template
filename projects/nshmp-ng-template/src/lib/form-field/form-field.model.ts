@@ -4,6 +4,9 @@
  */
 export interface FormField {
 
+  /** Whether to disable form field */
+  disable?: boolean;
+
   /** Any class to apply */
   formClass?: string;
 
@@ -18,7 +21,6 @@ export interface FormField {
 
   /** Whether to show the form field */
   showFormField?: boolean;
-
 }
 
 /** The form type */

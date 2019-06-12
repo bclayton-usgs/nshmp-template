@@ -10,6 +10,7 @@
     <mat-hint *ngIf="form.formFieldHint">{{ form.formFieldHint }}</mat-hint>
     <mat-error>{{ form.formFieldError }}</mat-error>
     <input
+        [disabled]="form.disabled"
         [formControlName]="form.formControlName"
         matInput
         [matTooltip]="form.tooltip"
